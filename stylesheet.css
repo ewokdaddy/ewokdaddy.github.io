@@ -1,0 +1,71 @@
+/* 
+
+RULES RULES
+# is for the id
+   . [class]
+   * is for all element tags 
+   */
+#other {
+	font-size: 20px;
+}
+
+#body {
+	background-color: lightgreen;
+}
+
+button {
+	background-color: lightblue;
+}
+
+#absT {
+	background-color: gold;
+	font-size: 15px;
+}
+
+#absB {
+	background-color: gold;
+	font-size: 15px;
+}
+
+input {
+	text-overflow: ellipsis;
+	padding: 0;
+	text-align: center;
+
+	/* background-color: lightgrey; */
+}
+
+input:focus {
+	background-color: lightblue;
+}
+
+#sumT {
+	background-color: aqua;
+	font-size: 20px;
+}
+
+#sumB {
+	background-color: aqua;
+	font-size: 20px;
+}
+
+
+#topS {
+	font-size: 10px;
+}
+
+#botS {
+	font-size: 10px;
+}
+
+#recallCookies {
+	font-size: 10px;
+}
+
+#initializeCookies {
+	font-size: 10px;
+}
+
+#saveCookies {
+font-size: 10px;	
+}

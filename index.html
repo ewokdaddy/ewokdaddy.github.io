@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body id="body">
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="script1.js"></script>
+	<script type="text/javascript" src="script2.js"></script>
+	<script type="text/javascript" src="script3.js"></script>
+	<script type="text/javascript" src="script4.js"></script>
+	<script type="text/javascript" src="script5.js"></script>
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+	<!-- next thing to do:  programmatically focus to the next batter and write "NEXT" in that cell
+write NEXT for the next batter when there is the third out -->
+	<!-- <br> -->
+	<b id="ballst"></b>
+
+
+
+
+
+
+
+	<button onclick="ballsTopFunction(); addPitchesTopFunction();"
+		style="height: 50px; width: 50px" id="ballstbutton">Balls</button>
+
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="baT" value="0">
+
+	<!-- <input size="1" id="top"> -->
+	<input type="text" style="width: 1px" id="top">
+
+	<br>
+	<b id="strikest"></b>
+	<!-- this comes out from behind the button -->
+	<button onclick="strikesTopFunction(); addPitchesTopFunction();"
+		style="height: 50px; width: 50px">Strikes</button>
+
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="stT" value="0">
+	<b id="topS">%S</b>
+	<input style="background-color: AliceBlue" size="3" type="text"
+		value="0" id='ratioT'>
+
+	<br>
+	<b id="foulst"></b>
+	<button onclick="foulballsTopFunction(); addPitchesTopFunction();"
+		style="height: 50px; width: 50px">Fouls</button>
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="fbT" value="0">
+
+	<!-- <b id="topatbat">@BAT</b> -->
+	<textarea rows="1" cols="7" id="currentbatterT" placeholder="@BAT"
+		style="text-transform: uppercase"></textarea>
+	<textarea rows="1" cols="30" id="paTop"></textarea>
+
+	<!-- <b id='showvariable'></b> -->
+
+	<br> TP
+
+	<input size="3" type="text" id="sumT" value="0">
+	<b>B</b>
+	<input size="3" type="text" id="otherB" value="0">
+	<b>@BatP</b>
+	<input size="3" type="text" id="tempPitchesTop" value="0">
+
+
+
+
+	<br>
+	<b id="hitst"></b>
+	<button>Hits</button>
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="hiT" value="0">
+
+	<br>
+	<b id="runst"></b>
+	<button onclick="runsTopFunction();">Runs</button>
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="ruT" value="0">
+
+	<br>
+	<button id="absT" onclick="shiftFocusT(); shownextbatterT();">ATBATSTATT</button>
+	<!-- works with shiftfocus first -->
+	<button onclick="thirdoutT();">3RDOUT</button>
+
+	<input type="text" size="10" placeholder="TEAM"
+		style="text-transform: uppercase" id="teamtop"> VS&nbsp;
+	<input type="text" size="10" placeholder="PITCHER"
+		style="text-transform: uppercase" id="pitchertop">
+
+	<!-- pitches per inning goes here -->
+	<button onclick="grabInningPitchesTop();">PPI</button>
+	<textarea rows="1" cols="50" id="pitchesCollectionT" wrap="hard"
+		style="text-transform: uppercase"></textarea>
+	<br>
+
+	<button onclick="focusBot(); displayotherB(); displayotherT();">BOT</button>
+
+	<b>BULL PEN</b>
+
+	<td align="center"><input type="text" placeholder="RP1"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp1T"></td>
+	<td align="center"><input type="text" placeholder="RP2"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp2T"></td>
+	<td align="center"><input type="text" placeholder="RP3"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp3T"></td>
+	<td align="center"><input type="text" placeholder="RP4"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp4T"></td>
+	<td align="center"><input type="text" placeholder="RP5"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp5T"></td>
+	<td align="center"><input type="text" placeholder="RP6"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp6T"></td>
+
+
+
+	<table>
+		<tr>
+			<!-- batters column -->
+
+			<th style="width: 10%">Name</th>
+
+			<!-- innings pitches (12 of them) horizontal entry row -->
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="1T" style="font-weight: bold;" type="text" id="1stTop"
+				maxlength="2" size="3" onclick="pitchesTop1Function()" readonly
+				value=""></td>
+
+			<!-- <button onclick="pitchesTop1Function();">1</button> -->
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="2T" style="font-weight: bold;" type="text" id="2ndTop"
+				maxlength="2" size="3" onclick="pitchesTop2Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="3T" style="font-weight: bold;" type="text" id="3rdTop"
+				maxlength="2" size="3" onclick="pitchesTop3Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="4T" style="font-weight: bold;" type="text" id="4thTop"
+				maxlength="2" size="3" onclick="pitchesTop4Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="5T" style="font-weight: bold;" type="text" id="5thTop"
+				maxlength="2" size="3" onclick="pitchesTop5Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="6T" style="font-weight: bold;" type="text" id="6thTop"
+				maxlength="2" size="3" onclick="pitchesTop6Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="7T" style="font-weight: bold;" type="text" id="7thTop"
+				maxlength="2" size="3" onclick="pitchesTop7Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="8T" style="font-weight: bold;" type="text" id="8thTop"
+				maxlength="2" size="3" onclick="pitchesTop8Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="9T" style="font-weight: bold;" type="text" id="9thTop"
+				maxlength="2" size="3" onclick="pitchesTop9Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="1" style="font-weight: bold;" type="text" id="10thTop"
+				maxlength="2" size="3"></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="2" style="font-weight: bold;" type="text" id="11thTop"
+				maxlength="2" size="3"></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="3" style="font-weight: bold;" type="text" id="12thTop"
+				maxlength="2" size="3"></td>
+
+
+
+		</tr>
+		<tr>
+			<!-- batters column -->
+			<!-- plate appearance cells horizontally -->
+			<td><input type="text" placeholder="TOP1"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top1"
+				onkeypress="ShowLeadoffHitterTop1(event);"></td>
+
+			<!-- cellb1inn1 below-->
+			<!-- hit enter, then go back to the top -->
+
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="24" size="6"
+				id="b1inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+
+		</tr>
+
+		<tr>
+			<td><input type="text" placeholder="TOP2"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top2"></td>
+
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="TOP3"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top3"></td>
+
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="TOP4"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top4"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="TOP5"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top5"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="TOP6"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top6"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="TOP7"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top7"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="TOP8"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top8"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="TOP9"
+				style="text-transform: uppercase" maxlength="12" size="8" id="top9"></td>
+
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn1T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn2T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn3T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn4T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn5T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn6T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn7T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn8T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn9T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn10T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn11T" onkeypress="EnterDetectFunctionTop(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn12T" onkeypress="EnterDetectFunctionTop(event)"></td>
+		</tr>
+		<tr>
+			<td>HITS</td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits1T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits2T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits3T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits4T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits5T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits6T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits7T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits8T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits9T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits10T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits11T"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits12T"></td>
+
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<br>
+	<button onclick="StartFresh();">START FRESH</button>
+	
+	
+	<button onclick="recallStoreT(); recallStoreB();" id="recallStore">RECALL
+		STORAGE</button>
+	<button onclick="StorefunctionT(); StorefunctionB();" id="saveLocalT">STORE DATA</button>
+	<br>
+	<br>
+	<br>
+	<br> &nbsp;
+	<button onclick="grabDataT()">TOTEXT</button>
+	<br>
+	<textarea rows="10" cols="100" id="textCollectionT" wrap="hard"
+		style="text-transform: uppercase"></textarea>
+
+	<br>
+	<br>
+	<!-- middle of html middle of html middle of html middle of html middle of html middle of html middle of html -->
+	<br>
+
+	<b id="ballsb"></b>
+	<button onclick="ballsBotFunction(); addPitchesBotFunction();"
+		style="height: 50px; width: 50px">Balls</button>
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="baB" value="0">
+
+	<input type="text" style="width: 1px" id="bot">
+
+	<br>
+	<b id="strikesb"></b>
+	<button onclick="strikesBotFunction(); addPitchesBotFunction();"
+		style="height: 50px; width: 50px">Strikes</button>
+
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="stB" value="0">
+	<b id="botS">%S</b>
+	<input style="background-color: AliceBlue" size="3" type="text"
+		value="0" id='ratioB'>
+
+	<br>
+	<b id="foulsb"></b>
+	<button onclick="foulballsBotFunction(); addPitchesBotFunction();"
+		style="height: 50px; width: 50px">Fouls</button>
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="fbB" value="0">
+
+	<!-- <b id="botatbat">@BAT</b> -->
+	<textarea rows="1" cols="7" id="currentbatterB" placeholder="@BAT"
+		style="text-transform: uppercase"></textarea>
+	<textarea rows="1" cols="30" id="paBot"></textarea>
+
+	<br>BP
+	<input size="3" type="text" id="sumB" value="0">
+	<b>T</b>
+	<input size="3" type="text" id="otherT" value="0">
+	<b>@BatP</b>
+	<input size="3" type="text" id="tempPitchesBot" value="0">
+
+
+	<br>
+	<b id="hitsb"></b>
+	<button>Hits</button>
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="hiB" value="0">
+
+	<br>
+	<b id="runsb"></b>
+	<button onclick="runsBotFunction();">Runs</button>
+	<input style="background-color: AliceBlue" size="2" type="text"
+		id="ruB" value="0">
+
+	<br>
+	<button id="absB" onclick="shiftFocusB(); shownextbatterB();">ATBATSTATB</button>
+
+	<button onclick="thirdoutB();">3RDOUT</button>
+
+	<br>
+
+	<input type="text" size="10" placeholder=" TEAM " value="TEAM"
+		style="text-transform: uppercase" id="teambot"> VS&nbsp;
+	<input type="text" size="10" placeholder="PITCHER"
+		style="text-transform: uppercase" id="pitcherbot">
+
+	<button onclick="grabInningPitchesBot();">PPI</button>
+	<textarea rows="1" cols="50" id="pitchesCollectionB" wrap="hard"
+		style="text-transform: uppercase"></textarea>
+	<br>
+
+	<button onclick="focusTop(); displayotherB(); displayotherT();">TOP</button>
+
+	<b>BULL PEN</b>
+
+	<td align="center"><input type="text" placeholder="RP1"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp1B"></td>
+	<td align="center"><input type="text" placeholder="RP2"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp2B"></td>
+	<td align="center"><input type="text" placeholder="RP3"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp3B"></td>
+	<td align="center"><input type="text" placeholder="RP4"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp4B"></td>
+	<td align="center"><input type="text" placeholder="RP5"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp5B"></td>
+	<td align="center"><input type="text" placeholder="RP6"
+		style="text-transform: uppercase" maxlength="9" size="8" id="rp6B"></td>
+	<table>
+
+		<tr>
+			<!-- batters column -->
+			<th style="width: 10%">Name</th>
+
+			<!-- innings entry row -->
+			<td align="center"><input style="text-align: center;"
+				placeholder="1B" style="font-weight: bold;" type="text" id="1stBot"
+				maxlength="2" size="3" onclick="pitchesBot1Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="2B" style="font-weight: bold;" type="text" id="2ndBot"
+				maxlength="2" size="3" onclick="pitchesBot2Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="3B" style="font-weight: bold;" type="text" id="3rdBot"
+				maxlength="2" size="3" onclick="pitchesBot3Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="4B" style="font-weight: bold;" type="text" id="4thBot"
+				maxlength="2" size="3" onclick="pitchesBot4Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="5B" style="font-weight: bold;" type="text" id="5thBot"
+				maxlength="2" size="3" onclick="pitchesBot5Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="6B" style="font-weight: bold;" type="text" id="6thBot"
+				maxlength="2" size="3" onclick="pitchesBot6Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="7B" style="font-weight: bold;" type="text" id="7thBot"
+				maxlength="2" size="3" onclick="pitchesBot7Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="8B" style="font-weight: bold;" type="text" id="8thBot"
+				maxlength="2" size="3" onclick="pitchesBot8Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="9B" style="font-weight: bold;" type="text" id="9thBot"
+				maxlength="2" size="3" onclick="pitchesBot9Function()" readonly
+				value=""></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="1" style="font-weight: bold;" type="text" id="10thBot"
+				maxlength="2" size="3"></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="2" style="font-weight: bold;" type="text" id="11thBot"
+				maxlength="2" size="3"></td>
+
+			<td align="center"><input style="text-align: center;"
+				placeholder="3" style="font-weight: bold;" type="text" id="12thBot"
+				maxlength="2" size="3"></td>
+
+		</tr>
+		<tr>
+			<!-- batters column -->
+			<td><input type="text" placeholder="BOT1"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot1"
+				onkeypress="ShowLeadoffHitterBot1(event);"></td>
+
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b1inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT2"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot2"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b2inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT3"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot3"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b3inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT4"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot4"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b4inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT5"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot5"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b5inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT6"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot6"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b6inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT7"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot7"></td>
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b7inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT8"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot8"></td>
+
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b8inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+
+		</tr>
+		<tr>
+			<td><input type="text" placeholder="BOT9"
+				style="text-transform: uppercase" maxlength="12" size="8" id="bot9"
+				onkeypress="EnterDetectFunctionBot9(event)"></td>
+
+			<td align="center"><input type="text" placeholder="1"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn1B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn2B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="3"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn3B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn4B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="5"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn5B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn6B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="7"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn7B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn8B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder="9"
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn9B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn10B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn11B" onkeypress="EnterDetectFunctionBot(event)"></td>
+			<td align="center"><input type="text" placeholder=""
+				style="text-transform: uppercase" maxlength="20" size="6"
+				id="b9inn12B" onkeypress="EnterDetectFunctionBot(event)"></td>
+		</tr>
+
+		<tr>
+			<td>HITS</td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits1B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits2B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits3B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits4B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits5B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits6B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits7B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits8B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits9B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits10B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits11B"></td>
+			<td align="center"><input type="text" value="0" maxlength="2"
+				size="2" id="hits12B"></td>
+		</tr>
+
+	</table>
+
+	&nbsp;
+	<button onclick="grabDataB();">TOTEXT</button>
+	<br>
+	<textarea rows="10" cols="100" id="textCollectionB" wrap="hard"
+		style="text-transform: uppercase"></textarea>
+	<br>
+	<script>
+		
+	</script>
+
+</body>
+</head>
+</html>
