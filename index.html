@@ -10,166 +10,305 @@
 </style>
 </head>
 <body id="body">
-<h1>YOUR SPORTS CONNECTION</h1>
-<br><br><br>
-<h2>A WAY TO SCORE A SPORTS GAME OVER THE WEB</h2>
+	<h1>YOUR SPORTS CONNECTION</h1>
+	<br>
+	<br>
+	<br>
+	<h2>A WAY TO SCORE A SPORTS GAME OVER THE WEB</h2>
 
 
 
-<div>
+	<div>
 
 
-<div>
+		<div>
 
-Enter Baseball Visitor Team and Pitcher
-<br>
-<input type="text" size="15" placeholder="VISITORTEAM"
-		style="text-transform: uppercase" id="teamtop">
-		<br>
-<input type="text" size="15" placeholder="HOMEPITCHER"
-		style="text-transform: uppercase" id="pitchertop">
-		<br>
-Enter Baseball Visitor Lineup
-<br>
-<input type="text" placeholder="1" style="text-transform: uppercase" maxlength="12" size="8" id="top1">
-<br>
-<input type="text" placeholder="2" style="text-transform: uppercase" maxlength="12" size="8" id="top2">
-<br>
-<input type="text" placeholder="3" style="text-transform: uppercase" maxlength="12" size="8" id="top3">
-<br>
-<input type="text" placeholder="4" style="text-transform: uppercase" maxlength="12" size="8" id="top4">
-<br>
-<input type="text" placeholder="5" style="text-transform: uppercase" maxlength="12" size="8" id="top5">
-<br>
-<input type="text" placeholder="6" style="text-transform: uppercase" maxlength="12" size="8" id="top6">
-<br>
-<input type="text" placeholder="7" style="text-transform: uppercase" maxlength="12" size="8" id="top7">
-<br>
-<input type="text" placeholder="8" style="text-transform: uppercase" maxlength="12" size="8" id="top8">
-<br>
-<input type="text" placeholder="9" style="text-transform: uppercase" maxlength="12" size="8" id="top9">
-<br><br>
+			Enter Baseball Visitor Team and Pitcher <br> <input type="text"
+				size="15" placeholder="VISITORTEAM"
+				style="text-transform: uppercase"
+				onkeypress="EnterDetectFunction(event);" id="teamtop"> <br>
+			<input type="text" size="15" placeholder="HOMEPITCHER"
+				style="text-transform: uppercase"
+				onkeypress="EnterDetectFunction(event);" id="pitchertop"> <br>
+			Enter Baseball Visitor Lineup <br> <input type="text"
+				placeholder="1" style="text-transform: uppercase" maxlength="12"
+				size="8" onkeypress="EnterDetectFunction(event);" id="top1">
+			<br> <input type="text" placeholder="2"
+				style="text-transform: uppercase" maxlength="12" size="8"
+				onkeypress="EnterDetectFunction(event);" id="top2"> <br>
+			<input type="text" placeholder="3" style="text-transform: uppercase"
+				maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+				id="top3"> <br> <input type="text" placeholder="4"
+				style="text-transform: uppercase" maxlength="12" size="8"
+				onkeypress="EnterDetectFunction(event);" id="top4"> <br>
+			<input type="text" placeholder="5" style="text-transform: uppercase"
+				maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+				id="top5"> <br> <input type="text" placeholder="6"
+				style="text-transform: uppercase" maxlength="12" size="8"
+				onkeypress="EnterDetectFunction(event);" id="top6"> <br>
+			<input type="text" placeholder="7" style="text-transform: uppercase"
+				maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+				id="top7"> <br> <input type="text" placeholder="8"
+				style="text-transform: uppercase" maxlength="12" size="8"
+				onkeypress="EnterDetectFunction(event);" id="top8"> <br>
+			<input type="text" placeholder="9" style="text-transform: uppercase"
+				maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+				id="top9"> <br>
+			<br>
 
-		
-</div>
 
-Enter Baseball Home Team and Pitcher
-<br>
-<input type="text" size="15" placeholder="HOMETEAM"
-		style="text-transform: uppercase" id="teambot">
-		<br>
+		</div>
+
+		Enter Baseball Home Team and Pitcher <br> <input type="text"
+			size="15" placeholder="HOMETEAM" style="text-transform: uppercase"
+			onkeypress="EnterDetectFunction(event);" id="teambot"> <br>
 		<input type="text" size="15" placeholder="VISITORPITCHER"
-		style="text-transform: uppercase" id="pitcherbot">
+			style="text-transform: uppercase"
+			onkeypress="EnterDetectFunction(event);" id="pitcherbot"> <br>
+		Enter Baseball Visitor Lineup <br> <input type="text"
+			placeholder="1" style="text-transform: uppercase" maxlength="12"
+			size="8" onkeypress="EnterDetectFunction(event);" id="bot1">
+		<br> <input type="text" placeholder="2"
+			style="text-transform: uppercase" maxlength="12" size="8"
+			onkeypress="EnterDetectFunction(event);" id="bot2"> <br>
+		<input type="text" placeholder="3" style="text-transform: uppercase"
+			maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+			id="bot3"> <br> <input type="text" placeholder="4"
+			style="text-transform: uppercase" maxlength="12" size="8"
+			onkeypress="EnterDetectFunction(event);" id="bot4"> <br>
+		<input type="text" placeholder="5" style="text-transform: uppercase"
+			maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+			id="bot5"> <br> <input type="text" placeholder="6"
+			style="text-transform: uppercase" maxlength="12" size="8"
+			onkeypress="EnterDetectFunction(event);" id="bot6"> <br>
+		<input type="text" placeholder="7" style="text-transform: uppercase"
+			maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+			id="bot7"> <br> <input type="text" placeholder="8"
+			style="text-transform: uppercase" maxlength="12" size="8"
+			onkeypress="EnterDetectFunction(event);" id="bot8"> <br>
+		<input type="text" placeholder="9" style="text-transform: uppercase"
+			maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
+			id="bot9"> <br>
 		<br>
-Enter Baseball Visitor Lineup
-<br>
-<input type="text" placeholder="1" style="text-transform: uppercase" maxlength="12" size="8" id="bot1">
-<br>
-<input type="text" placeholder="2" style="text-transform: uppercase" maxlength="12" size="8" id="bot2">
-<br>
-<input type="text" placeholder="3" style="text-transform: uppercase" maxlength="12" size="8" id="bot3">
-<br>
-<input type="text" placeholder="4" style="text-transform: uppercase" maxlength="12" size="8" id="bot4">
-<br>
-<input type="text" placeholder="5" style="text-transform: uppercase" maxlength="12" size="8" id="bot5">
-<br>
-<input type="text" placeholder="6" style="text-transform: uppercase" maxlength="12" size="8" id="bot6">
-<br>
-<input type="text" placeholder="7" style="text-transform: uppercase" maxlength="12" size="8" id="bot7">
-<br>
-<input type="text" placeholder="8" style="text-transform: uppercase" maxlength="12" size="8" id="bot8">
-<br>
-<input type="text" placeholder="9" style="text-transform: uppercase" maxlength="12" size="8" id="bot9">
-<br><br>
-<button onclick="StartFresh();">START FRESH</button>
-	<button onclick="recallT(); recallB();" id="recall">RECALL
-		STORAGE</button>
-		
-	<button onclick="StoreVisitorTeamT(); StoreHomeTeamB();" id="saveLocalT">STORE DATA</button>
-</div>
-<script>
+		<button onclick="StartFresh();">START FRESH</button>
+		<button onclick="recallT(); recallB();" id="recall">RECALL
+			STORAGE</button>
 
-function recallT() {
-	document.getElementById('top1').value = localStorage.getItem("top1");
-	document.getElementById('top2').value = localStorage.getItem("top2");
-	document.getElementById('top3').value = localStorage.getItem("top3");
-	document.getElementById('top4').value = localStorage.getItem("top4");
-	document.getElementById('top5').value = localStorage.getItem("top5");
-	document.getElementById('top6').value = localStorage.getItem("top6");
-	document.getElementById('top7').value = localStorage.getItem("top7");
-	document.getElementById('top8').value = localStorage.getItem("top8");
-	document.getElementById('top9').value = localStorage.getItem("top9");
+		<button onclick="StoreVisitorTeamT(); StoreHomeTeamB();"
+			id="saveLocalT">STORE DATA</button>
+	</div>
+	<script>
 	
-	document.getElementById('pitchertop').value = localStorage.getItem("pitcherT");
-	document.getElementById('teamtop').value = localStorage.getItem("teamT");
-}
+	document.getElementById("teamtop").focus();
+	
+		function recallT() {
+			document.getElementById('top1').value = localStorage
+					.getItem("top1");
+			document.getElementById('top2').value = localStorage
+					.getItem("top2");
+			document.getElementById('top3').value = localStorage
+					.getItem("top3");
+			document.getElementById('top4').value = localStorage
+					.getItem("top4");
+			document.getElementById('top5').value = localStorage
+					.getItem("top5");
+			document.getElementById('top6').value = localStorage
+					.getItem("top6");
+			document.getElementById('top7').value = localStorage
+					.getItem("top7");
+			document.getElementById('top8').value = localStorage
+					.getItem("top8");
+			document.getElementById('top9').value = localStorage
+					.getItem("top9");
 
-function recallB() {
-	document.getElementById('bot1').value = localStorage.getItem("bot1");
-	document.getElementById('bot2').value = localStorage.getItem("bot2");
-	document.getElementById('bot3').value = localStorage.getItem("bot3");
-	document.getElementById('bot4').value = localStorage.getItem("bot4");
-	document.getElementById('bot5').value = localStorage.getItem("bot5");
-	document.getElementById('bot6').value = localStorage.getItem("bot6");
-	document.getElementById('bot7').value = localStorage.getItem("bot7");
-	document.getElementById('bot8').value = localStorage.getItem("bot8");
-	document.getElementById('bot9').value = localStorage.getItem("bot9");	
-	
-	document.getElementById('teambot').value = localStorage.getItem("teamB");	
-	document.getElementById('pitcherbot').value = localStorage.getItem("pitcherB");
-	
-	
-	
-	
-}
+			document.getElementById('pitchertop').value = localStorage
+					.getItem("pitcherT");
+			document.getElementById('teamtop').value = localStorage
+					.getItem("teamT");
+		}
 
-function StoreVisitorTeamT() {
-	localStorage.setItem("teamT", document.getElementById('teamtop').value);
-	localStorage.setItem("pitcherT", document.getElementById('pitchertop').value);
-	
-	localStorage.setItem("top1", document.getElementById('top1').value);
-	localStorage.setItem("top2", document.getElementById('top2').value);
-	localStorage.setItem("top3", document.getElementById('top3').value);
-	localStorage.setItem("top4", document.getElementById('top4').value);
-	localStorage.setItem("top5", document.getElementById('top5').value);
-	localStorage.setItem("top6", document.getElementById('top6').value);
-	localStorage.setItem("top7", document.getElementById('top7').value);
-	localStorage.setItem("top8", document.getElementById('top8').value);
-	localStorage.setItem("top9", document.getElementById('top9').value);
-	
-	localStorage.setItem("ballsT", 0);
-	localStorage.setItem("strikesT", 0);
-	localStorage.setItem("foulsT", 0);
-}
+		function recallB() {
+			document.getElementById('bot1').value = localStorage
+					.getItem("bot1");
+			document.getElementById('bot2').value = localStorage
+					.getItem("bot2");
+			document.getElementById('bot3').value = localStorage
+					.getItem("bot3");
+			document.getElementById('bot4').value = localStorage
+					.getItem("bot4");
+			document.getElementById('bot5').value = localStorage
+					.getItem("bot5");
+			document.getElementById('bot6').value = localStorage
+					.getItem("bot6");
+			document.getElementById('bot7').value = localStorage
+					.getItem("bot7");
+			document.getElementById('bot8').value = localStorage
+					.getItem("bot8");
+			document.getElementById('bot9').value = localStorage
+					.getItem("bot9");
 
-function StoreHomeTeamB() {
-	localStorage.setItem("teamB", document.getElementById('teambot').value);
-	localStorage.setItem("pitcherB", document.getElementById('pitcherbot').value);
-	
-	localStorage.setItem("bot1", document.getElementById('bot1').value);
-	localStorage.setItem("bot2", document.getElementById('bot2').value);
-	localStorage.setItem("bot3", document.getElementById('bot3').value);
-	localStorage.setItem("bot4", document.getElementById('bot4').value);
-	localStorage.setItem("bot5", document.getElementById('bot5').value);
-	localStorage.setItem("bot6", document.getElementById('bot6').value);
-	localStorage.setItem("bot7", document.getElementById('bot7').value);
-	localStorage.setItem("bot8", document.getElementById('bot8').value);
-	localStorage.setItem("bot9", document.getElementById('bot9').value);
-	
-	localStorage.setItem("ballsB", 0);
-	localStorage.setItem("strikesB", 0);
-	localStorage.setItem("foulsB", 0);
-}
+			document.getElementById('teambot').value = localStorage
+					.getItem("teamB");
+			document.getElementById('pitcherbot').value = localStorage
+					.getItem("pitcherB");
 
-function StartFresh() {
-	localStorage.clear();
-}
-</script>
-<br>
-<a href="baseball_scoresheet.html">Baseball Scoring Page</a>
-<br><br><br><br>
-<a href="football_scoresheet.html">Football Scoring Page</a>
-<br><br><br><br>
+		}
+
+		function StoreVisitorTeamT() {
+			localStorage.setItem("teamT",
+					document.getElementById('teamtop').value);
+			localStorage.setItem("pitcherT", document
+					.getElementById('pitchertop').value);
+
+			localStorage.setItem("top1", document.getElementById('top1').value);
+			localStorage.setItem("top2", document.getElementById('top2').value);
+			localStorage.setItem("top3", document.getElementById('top3').value);
+			localStorage.setItem("top4", document.getElementById('top4').value);
+			localStorage.setItem("top5", document.getElementById('top5').value);
+			localStorage.setItem("top6", document.getElementById('top6').value);
+			localStorage.setItem("top7", document.getElementById('top7').value);
+			localStorage.setItem("top8", document.getElementById('top8').value);
+			localStorage.setItem("top9", document.getElementById('top9').value);
+
+			localStorage.setItem("ballsT", 0);
+			localStorage.setItem("strikesT", 0);
+			localStorage.setItem("foulsT", 0);
+		}
+
+		function StoreHomeTeamB() {
+			localStorage.setItem("teamB",
+					document.getElementById('teambot').value);
+			localStorage.setItem("pitcherB", document
+					.getElementById('pitcherbot').value);
+
+			localStorage.setItem("bot1", document.getElementById('bot1').value);
+			localStorage.setItem("bot2", document.getElementById('bot2').value);
+			localStorage.setItem("bot3", document.getElementById('bot3').value);
+			localStorage.setItem("bot4", document.getElementById('bot4').value);
+			localStorage.setItem("bot5", document.getElementById('bot5').value);
+			localStorage.setItem("bot6", document.getElementById('bot6').value);
+			localStorage.setItem("bot7", document.getElementById('bot7').value);
+			localStorage.setItem("bot8", document.getElementById('bot8').value);
+			localStorage.setItem("bot9", document.getElementById('bot9').value);
+
+			localStorage.setItem("ballsB", 0);
+			localStorage.setItem("strikesB", 0);
+			localStorage.setItem("foulsB", 0);
+		}
+
+		function StartFresh() {
+			localStorage.clear();
+		}
+		var count = 0;
+		function EnterDetectFunction(event) {
+			var x = event.which || event.keyCode;
+			
+
+			if (x == 13) {
+				switch (count) {
+				case 0:
+					document.getElementById("pitchertop").focus();
+					count++;
+					break;
+				case 1:
+					document.getElementById("top1").focus();
+					count++;
+					break;
+				case 2:
+					document.getElementById("top2").focus();
+					count++;
+					break;
+				case 3:
+					document.getElementById("top3").focus();
+					count++;
+					break;
+				case 4:
+					document.getElementById("top4").focus();
+					count++;
+					break;
+				case 5:
+					document.getElementById("top5").focus();
+					count++;
+					break;
+				case 6:
+					document.getElementById("top6").focus();
+					count++;
+					break;
+				case 7:
+					document.getElementById("top7").focus();
+					count++;
+					break;
+				case 8:
+					document.getElementById("top8").focus();
+					count++;
+					break;
+				case 9:
+					document.getElementById("top9").focus();
+					count++;
+					break;
+				case 10:
+					document.getElementById("teambot").focus();
+					count++;
+					break;
+				case 11:
+					document.getElementById("pitcherbot").focus();
+					count++;
+					break;
+				case 12:
+					document.getElementById("bot1").focus();
+					count++;
+					break;
+				case 13:
+					document.getElementById("bot2").focus();
+					count++;
+					break;
+				case 14:
+					document.getElementById("bot3").focus();
+					count++;
+					break;
+				case 15:
+					document.getElementById("bot4").focus();
+					count++;
+					break;
+				case 16:
+					document.getElementById("bot5").focus();
+					count++;
+					break;
+				case 17:
+					document.getElementById("bot6").focus();
+					count++;
+					break;
+				case 18:
+					document.getElementById("bot7").focus();
+					count++;
+					break;
+				case 19:
+					document.getElementById("bot8").focus();
+					count++;
+					break;
+				case 20:
+					document.getElementById("bot9").focus();
+					count++;
+					break;
+
+				default:
+					;
+				}// end switch statement	
+
+			}// end if statement
+		}
+	</script>
+	<br>
+	<a href="baseball_scoresheet.html">Baseball Scoring Page</a>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="football_scoresheet.html">Football Scoring Page</a>
+	<br>
+	<br>
+	<br>
+	<br>
 
 </body>
 </html>
