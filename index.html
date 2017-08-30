@@ -82,12 +82,47 @@ Enter Baseball Visitor Lineup
 <input type="text" placeholder="9" style="text-transform: uppercase" maxlength="12" size="8" id="bot9">
 <br><br>
 <button onclick="StartFresh();">START FRESH</button>
-	<button onclick="recallStoreT(); recallStoreB();" id="recallStore">RECALL
+	<button onclick="recallT(); recallB();" id="recall">RECALL
 		STORAGE</button>
 		
 	<button onclick="StoreVisitorTeamT(); StoreHomeTeamB();" id="saveLocalT">STORE DATA</button>
 </div>
 <script>
+
+function recallT() {
+	document.getElementById('top1').value = localStorage.getItem("top1");
+	document.getElementById('top2').value = localStorage.getItem("top2");
+	document.getElementById('top3').value = localStorage.getItem("top3");
+	document.getElementById('top4').value = localStorage.getItem("top4");
+	document.getElementById('top5').value = localStorage.getItem("top5");
+	document.getElementById('top6').value = localStorage.getItem("top6");
+	document.getElementById('top7').value = localStorage.getItem("top7");
+	document.getElementById('top8').value = localStorage.getItem("top8");
+	document.getElementById('top9').value = localStorage.getItem("top9");
+	
+	document.getElementById('pitchertop').value = localStorage.getItem("pitcherT");
+	document.getElementById('teamtop').value = localStorage.getItem("teamT");
+}
+
+function recallB() {
+	document.getElementById('bot1').value = localStorage.getItem("bot1");
+	document.getElementById('bot2').value = localStorage.getItem("bot2");
+	document.getElementById('bot3').value = localStorage.getItem("bot3");
+	document.getElementById('bot4').value = localStorage.getItem("bot4");
+	document.getElementById('bot5').value = localStorage.getItem("bot5");
+	document.getElementById('bot6').value = localStorage.getItem("bot6");
+	document.getElementById('bot7').value = localStorage.getItem("bot7");
+	document.getElementById('bot8').value = localStorage.getItem("bot8");
+	document.getElementById('bot9').value = localStorage.getItem("bot9");	
+	
+	document.getElementById('teambot').value = localStorage.getItem("teamB");	
+	document.getElementById('pitcherbot').value = localStorage.getItem("pitcherB");
+	
+	
+	
+	
+}
+
 function StoreVisitorTeamT() {
 	localStorage.setItem("teamT", document.getElementById('teamtop').value);
 	localStorage.setItem("pitcherT", document.getElementById('pitchertop').value);
