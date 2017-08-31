@@ -472,21 +472,27 @@ function ShowLeadoffHitterBot1(event) { // puts the leadoff hitter innings to
 }
 
 function EnterDetectFunctionTop(event) {
-	calculateHitsT();
-	totalHitsT();
-	totalHitsB();
+
 	var x = event.which || event.keyCode;
 	if (x == 13) {
+		calculateHitsT();
+		totalHitsT();
+		totalHitsB();
+		StorefunctionT();
+		StorefunctionB();
 		document.getElementById("top").focus();
 	}
 }
 
 function EnterDetectFunctionBot(event) {
-	calculateHitsB();
-	totalHitsB();
-	totalHitsT();
+
 	var x = event.which || event.keyCode;
 	if (x == 13) {
+		calculateHitsB();
+		totalHitsB();
+		totalHitsT();
+		StorefunctionT();
+		StorefunctionB();
 		document.getElementById("bot").focus();
 	}
 }

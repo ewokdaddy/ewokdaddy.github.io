@@ -20,13 +20,7 @@ write NEXT for the next batter when there is the third out -->
 	<!-- <br> -->
 	<b id="ballst"></b>
 
-
-
-
-
-
-
-	<button onclick="ballsTopFunction(); addPitchesTopFunction();"
+	<button onclick="ballsTopFunction(); addPitchesTopFunction(); StorefunctionT(); StorefunctionB();"
 		style="height: 50px; width: 50px" id="ballstbutton">Balls</button>
 
 	<input style="background-color: AliceBlue" size="2" type="text"
@@ -38,7 +32,7 @@ write NEXT for the next batter when there is the third out -->
 	<br>
 	<b id="strikest"></b>
 	<!-- this comes out from behind the button -->
-	<button onclick="strikesTopFunction(); addPitchesTopFunction();"
+	<button onclick="strikesTopFunction(); addPitchesTopFunction(); StorefunctionT(); StorefunctionB();"
 		style="height: 50px; width: 50px">Strikes</button>
 
 	<input style="background-color: AliceBlue" size="2" type="text"
@@ -49,7 +43,7 @@ write NEXT for the next batter when there is the third out -->
 
 	<br>
 	<b id="foulst"></b>
-	<button onclick="foulballsTopFunction(); addPitchesTopFunction();"
+	<button onclick="foulballsTopFunction(); addPitchesTopFunction(); StorefunctionT(); StorefunctionB();"
 		style="height: 50px; width: 50px">Fouls</button>
 	<input style="background-color: AliceBlue" size="2" type="text"
 		id="fbT" value="0">
@@ -85,7 +79,7 @@ write NEXT for the next batter when there is the third out -->
 		id="ruT" value="0">
 
 	<br>
-	<button id="absT" onclick="shiftFocusT(); shownextbatterT();">ATBATSTATT</button>
+	<button id="absT" onclick="StorefunctionT(); StorefunctionB(); shiftFocusT(); shownextbatterT();">ATBATSTATT</button>
 	<!-- works with shiftfocus first -->
 	<button onclick="thirdoutT();">3RDOUT</button>
 
@@ -603,7 +597,7 @@ write NEXT for the next batter when there is the third out -->
 	<button onclick="StartFresh();">START FRESH</button>
 	
 	
-	<button onclick="recallStoreT(); recallStoreB();" id="recallStore">RECALL
+	<button onclick="recallStoreT(); recallStoreB(); addPitchesTopFunction(); addPitchesBotFunction();" id="recallStore">RECALL
 		STORAGE</button>
 	<button onclick="StorefunctionT(); StorefunctionB();" id="saveLocalT">STORE DATA</button>
 	<br>
@@ -621,7 +615,7 @@ write NEXT for the next batter when there is the third out -->
 	<br>
 
 	<b id="ballsb"></b>
-	<button onclick="ballsBotFunction(); addPitchesBotFunction();"
+	<button onclick="ballsBotFunction(); addPitchesBotFunction(); StorefunctionT(); StorefunctionB();"
 		style="height: 50px; width: 50px">Balls</button>
 	<input style="background-color: AliceBlue" size="2" type="text"
 		id="baB" value="0">
@@ -630,7 +624,7 @@ write NEXT for the next batter when there is the third out -->
 
 	<br>
 	<b id="strikesb"></b>
-	<button onclick="strikesBotFunction(); addPitchesBotFunction();"
+	<button onclick="strikesBotFunction(); addPitchesBotFunction(); StorefunctionT(); StorefunctionB();"
 		style="height: 50px; width: 50px">Strikes</button>
 
 	<input style="background-color: AliceBlue" size="2" type="text"
@@ -641,7 +635,7 @@ write NEXT for the next batter when there is the third out -->
 
 	<br>
 	<b id="foulsb"></b>
-	<button onclick="foulballsBotFunction(); addPitchesBotFunction();"
+	<button onclick="foulballsBotFunction(); addPitchesBotFunction(); StorefunctionT(); StorefunctionB();"
 		style="height: 50px; width: 50px">Fouls</button>
 	<input style="background-color: AliceBlue" size="2" type="text"
 		id="fbB" value="0">
@@ -672,7 +666,7 @@ write NEXT for the next batter when there is the third out -->
 		id="ruB" value="0">
 
 	<br>
-	<button id="absB" onclick="shiftFocusB(); shownextbatterB();">ATBATSTATB</button>
+	<button id="absB" onclick="shiftFocusB(); shownextbatterB(); StorefunctionT(); StorefunctionB();">ATBATSTATB</button>
 
 	<button onclick="thirdoutB();">3RDOUT</button>
 
