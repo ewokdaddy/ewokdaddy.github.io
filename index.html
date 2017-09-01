@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <title>YOUR SPORTS CONNECTION</title>
 <style type="text/css">
-#body {
-	background-color: lightgreen;
-}
+
 </style>
 </head>
 <body id="body">
@@ -53,8 +51,7 @@
 				onkeypress="EnterDetectFunction(event);" id="top8"> <br>
 			<input type="text" placeholder="9" style="text-transform: uppercase"
 				maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
-				id="top9"> <br>
-			<br>
+				id="top9"> <br> <br>
 
 
 		</div>
@@ -88,8 +85,7 @@
 			onkeypress="EnterDetectFunction(event);" id="bot8"> <br>
 		<input type="text" placeholder="9" style="text-transform: uppercase"
 			maxlength="12" size="8" onkeypress="EnterDetectFunction(event);"
-			id="bot9"> <br>
-		<br>
+			id="bot9"> <br> <br>
 		<button onclick="StartFresh();">START FRESH</button>
 		<button onclick="recallT(); recallB();" id="recall">RECALL
 			STORAGE</button>
@@ -98,9 +94,8 @@
 			id="saveLocalT">STORE DATA</button>
 	</div>
 	<script>
-	
-	document.getElementById("teamtop").focus();
-	
+		document.getElementById("teamtop").focus();
+
 		function recallT() {
 			document.getElementById('top1').value = localStorage
 					.getItem("top1");
@@ -202,7 +197,6 @@
 		var count = 0;
 		function EnterDetectFunction(event) {
 			var x = event.which || event.keyCode;
-			
 
 			if (x == 13) {
 				switch (count) {
@@ -295,7 +289,6 @@
 					StoreHomeTeamB();
 					document.getElementById('baseball_link').click();
 					alert("PRESS ENTER AND RECALL DATA ! ! ! ! ! ! ! ! ")
-				
 
 				default:
 					;
@@ -305,13 +298,26 @@
 		}
 	</script>
 	<br>
-	<a id="baseball_link" href="baseball_scoresheet.html">Baseball Scoring Page</a>
+	<a id="baseball_link" href="baseball_scoresheet.html">Baseball
+		Scoring Page</a>
 	<br>
 	<br>
 	<br>
 	<br>
-	<a href="football_scoresheet.html">Football Scoring Page</a>
+	<hr>
+	
 	<br>
+	
+	<div>
+		Enter The   Home   Team <input type="text" placeholder="Home Team"
+			style="text-transform: uppercase" maxlength="20" size="20"
+			id="homefootballteam"> <br> 
+		Enter The Visitor Team <input
+			type="text" placeholder="Visitor Team"
+			style="text-transform: uppercase" maxlength="20" size="20"
+			id="visitorfootballteam"> <br>
+			<a href="football_scoresheet.html">Football Scoring Page</a>
+	</div>
 	<br>
 	<br>
 	<br>
