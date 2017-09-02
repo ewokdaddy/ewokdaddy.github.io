@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FOOTBALL SCORESHEET HOME</title>
+<title>FOOTBALL SCORESHEET VISITOR</title>
 <style>
 #body {
 	background-color: lightgreen;
@@ -26,10 +26,11 @@ button {
 </style>
 </head>
 <body id="body">
-	<a href="football_sc_v.html">VISITOR</a>
+	<a href="football_sc_h.html">HOME</a>
 	<script type="text/javascript" src="script6.js"></script>
-	<h1 id="hometeam">HOME TEAM</h1>
-	<input size="5" type="text" value="team" id='thehometeam'>
+
+	<h1 id="hometeam">VISITOR TEAM</h1>
+	<input size="5" type="text" value="team" id='thevisitorteam'>
 	<br>
 	<br>
 	<br>
@@ -41,13 +42,14 @@ button {
 				<td>KICKOFF</td>
 			</tr>
 			<tr>
-				<td><button onclick="touchbackhome();">Touchback</button></td>
-				<td><button onclick="kickreturnhome();">Return</button></td>
+				<td><button onclick="">Touchback</button></td>
+				<td><button onclick="">Return</button></td>
 				<td><button onclick="">-</button></td>
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='touchbackhome'></td>
-				<td><input size="5" type="text" value="0" id='kickreturnhome'></td>
+				<td><input size="5" type="text" value="0" id='touchbackvisitor'></td>
+				<td><input size="5" type="text" value="0"
+					id='kickreturnvisitor'></td>
 			</tr>
 		</table>
 		<br>
@@ -62,8 +64,9 @@ button {
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0"
-					id='puntfaircatchhome'></td>
-				<td><input size="5" type="text" value="0" id='puntreturnhome'></td>
+					id='puntfaircatchvisitor'></td>
+				<td><input size="5" type="text" value="0"
+					id='puntreturnvisitor'></td>
 			</tr>
 		</table>
 	</div>
@@ -79,7 +82,7 @@ button {
 					<button onclick="">-</button></td>
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='1stdnhome'>
+				<td><input size="5" type="text" value="0" id='1stdnvisitor'>
 			</tr>
 
 			<tr>
@@ -90,8 +93,8 @@ button {
 					<button onclick="">NO</button></td>
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='3rddnhomeyes'>
-					<input size="5" type="text" value="0" id='3rddnhomeno'>
+				<td><input size="5" type="text" value="0" id='3rddnvisitoryes'>
+					<input size="5" type="text" value="0" id='3rddnvisitorno'>
 			</tr>
 
 			<tr>
@@ -104,8 +107,8 @@ button {
 
 
 			<tr>
-				<td><input size="5" type="text" value="0" id='4thdnhomeyes'>
-					<input size="5" type="text" value="0" id='4thdnhomeno'>
+				<td><input size="5" type="text" value="0" id='4thdnvisitoryes'>
+					<input size="5" type="text" value="0" id='4thdnvisitorno'>
 			</tr>
 
 		</table>
@@ -123,23 +126,23 @@ button {
 				<td><button onclick="">TD PASS</button></td>
 				<td><button onclick="">TD RUN</button></td>
 				<td><button onclick="">PAT</button></td>
-				<td><button onclick="">FG</button></td>
+				<td><button onclick="">TD FG</button></td>
 				<td><button onclick="">2PT CONV</button></td>
 			</tr>
 
 			<tr>
 
-				<td><input size="5" type="text" value="0" id='runhome'></td>
-				<td><input size="5" type="text" value="0" id='fumblehome'></td>
-				<td><input size="5" type="text" value="0" id='passhome'></td>
-				<td><input size="5" type="text" value="0" id='complhome'></td>
-				<td><input size="5" type="text" value="0" id='incomphome'></td>
-				<td><input size="5" type="text" value="0" id='interchome'></td>
-				<td><input size="5" type="text" value="0" id='tdpasshome'></td>
-				<td><input size="5" type="text" value="0" id='tdrunhome'></td>
-				<td><input size="5" type="text" value="0" id='pathome'></td>
-				<td><input size="5" type="text" value="0" id='fghome'></td>
-				<td><input size="5" type="text" value="0" id='2pthome'></td>
+				<td><input size="5" type="text" value="0" id='runvisitor'></td>
+				<td><input size="5" type="text" value="0" id='fumblevisitor'></td>
+				<td><input size="5" type="text" value="0" id='passvisitor'></td>
+				<td><input size="5" type="text" value="0" id='complvisitor'></td>
+				<td><input size="5" type="text" value="0" id='incompvisitor'></td>
+				<td><input size="5" type="text" value="0" id='intercvisitor'></td>
+				<td><input size="5" type="text" value="0" id='tdpassvisitor'></td>
+				<td><input size="5" type="text" value="0" id='tdrunvisitor'></td>
+				<td><input size="5" type="text" value="0" id='patvisitor'></td>
+				<td><input size="5" type="text" value="0" id='fgvisitor'></td>
+				<td><input size="5" type="text" value="0" id='2ptvisitor'></td>
 
 			</tr>
 
@@ -152,8 +155,8 @@ button {
 				<td><button onclick="">PENETRATE 20</button</td>
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='penet50home'></td>
-				<td><input size="5" type="text" value="0" id='penet20home'></td>
+				<td><input size="5" type="text" value="0" id='penet50visitor'></td>
+				<td><input size="5" type="text" value="0" id='penet20visitor'></td>
 			</tr>
 		</table>
 
@@ -164,7 +167,7 @@ button {
 				<td><button onclick="">OFFENSIVE PENALTIES</button</td>
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='offpenhome'></td>
+				<td><input size="5" type="text" value="0" id='offpenvisitor'></td>
 			</tr>
 		</table>
 		<br>
@@ -179,10 +182,10 @@ button {
 
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='tflhome'></td>
-				<td><input size="5" type="text" value="0" id='fumrechome'></td>
-				<td><input size="5" type="text" value="0" id='interchome'></td>
-				<td><input size="5" type="text" value="0" id='sackhome'></td>
+				<td><input size="5" type="text" value="0" id='tflvisitor'></td>
+				<td><input size="5" type="text" value="0" id='fumrecvisitor'></td>
+				<td><input size="5" type="text" value="0" id='interdvisitor'></td>
+				<td><input size="5" type="text" value="0" id='sachvisitor'></td>
 
 			</tr>
 		</table>
@@ -194,13 +197,11 @@ button {
 				<td><button onclick="">DEFENSIVE PENALTIES</button</td>
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='defpenhome'></td>
+				<td><input size="5" type="text" value="0" id='defpenvisitor'></td>
 			</tr>
 		</table>
 
 
 	</div>
-
-
 </body>
 </html>
