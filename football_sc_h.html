@@ -26,8 +26,10 @@ button {
 </style>
 </head>
 <body id="body">
+	<br>
+	<br>
+	<br>
 	<a href="football_sc_v.html">VISITOR</a>
-	<script type="text/javascript" src="script6.js"></script>
 	<h1 id="hometeam">HOME TEAM</h1>
 	<input size="5" type="text" value="team" id='thehometeam'>
 	<br>
@@ -43,7 +45,7 @@ button {
 			<tr>
 				<td><button onclick="touchbackhome();">Touchback</button></td>
 				<td><button onclick="kickreturnhome();">Return</button></td>
-				<td><button onclick="">-</button></td>
+
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='touchbackhome'></td>
@@ -56,16 +58,18 @@ button {
 				<td>PUNT</td>
 			</tr>
 			<tr>
-				<td><button onclick="">Touchback/Faircatch</button></td>
-				<td><button onclick="">Return</button></td>
-				<td><button onclick="">-</button></td>
+				<td><button onclick="faircatchhome()">Touchback/Faircatch</button></td>
+				<td><button onclick="puntreturnhome();">Return</button></td>
+
+
+
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0"
-					id='puntfaircatchhome'></td>
+				<td><input size="5" type="text" value="0" id='faircatchhome'></td>
 				<td><input size="5" type="text" value="0" id='puntreturnhome'></td>
 			</tr>
 		</table>
+
 	</div>
 	<br>
 
@@ -75,8 +79,7 @@ button {
 				<td>1stDOWNS</td>
 			</tr>
 			<tr>
-				<td><button onclick="">+</button>
-					<button onclick="">-</button></td>
+				<td><button onclick="firstdnhome()">+</button>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='1stdnhome'>
@@ -86,26 +89,26 @@ button {
 				<td>3rdDOWN CONV</td>
 			</tr>
 			<tr>
-				<td><button onclick="">YES</button>
-					<button onclick="">NO</button></td>
+				<td><button onclick="thirdhomeyes();">YES</button>
+					<button onclick="thirdhomeno();">NO</button></td>
 			</tr>
 			<tr>
-				<td><input size="5" type="text" value="0" id='3rddnhomeyes'>
-					<input size="5" type="text" value="0" id='3rddnhomeno'>
+				<td><input size="5" type="text" value="0" id='3rdhomeyes'>
+					<input size="5" type="text" value="0" id='3rdhomeno'>
 			</tr>
 
 			<tr>
 				<td>4thDOWN CONV</td>
 			</tr>
 			<tr>
-				<td><button onclick="">YES</button>
-					<button onclick="">NO</button></td>
+				<td><button onclick="fourthhomeyes();">YES</button>
+					<button onclick="fourthhomeno();">NO</button></td>
 			</tr>
 
 
 			<tr>
-				<td><input size="5" type="text" value="0" id='4thdnhomeyes'>
-					<input size="5" type="text" value="0" id='4thdnhomeno'>
+				<td><input size="5" type="text" value="0" id='4thhomeyes'>
+					<input size="5" type="text" value="0" id='4thhomeno'>
 			</tr>
 
 		</table>
@@ -114,17 +117,17 @@ button {
 		<table>
 
 			<tr>
-				<td><button onclick="">RUN</button</td>
-				<td><button onclick="">FUMBLE</button></td>
-				<td><button onclick="">PASS</button></td>
-				<td><button onclick="">COMPL</button></td>
-				<td><button onclick="">INCOMP</button></td>
-				<td><button onclick="">INTERCEPT</button></td>
-				<td><button onclick="">TD PASS</button></td>
-				<td><button onclick="">TD RUN</button></td>
-				<td><button onclick="">PAT</button></td>
-				<td><button onclick="">FG</button></td>
-				<td><button onclick="">2PT CONV</button></td>
+				<td><button onclick="runhome();">RUN</button</td>
+				<td><button onclick="fumblehome();">FUMBLE</button></td>
+				<td><button onclick="passhome();">PASS</button></td>
+				<td><button onclick="complhome();">COMPL</button></td>
+				<td><button onclick="incomphome();">INCOMP</button></td>
+				<td><button onclick="intercepthome();">INTERCEPT</button></td>
+				<td><button onclick="tdpasshome();">TD PASS</button></td>
+				<td><button onclick="tdrunhome();">TD RUN</button></td>
+				<td><button onclick="pathome();">PAT</button></td>
+				<td><button onclick="fghome();">FG</button></td>
+				<td><button onclick="twopointhome();">2PT CONV</button></td>
 			</tr>
 
 			<tr>
@@ -148,8 +151,8 @@ button {
 
 		<table>
 			<tr>
-				<td><button onclick="">PENETRATE 50</button</td>
-				<td><button onclick="">PENETRATE 20</button</td>
+				<td><button onclick="penet50home();">PENETRATE 50</button</td>
+				<td><button onclick="penet20home();">PENETRATE 20</button</td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='penet50home'></td>
@@ -161,7 +164,8 @@ button {
 
 		<table>
 			<tr>
-				<td><button onclick="">OFFENSIVE PENALTIES</button</td>
+				<td><button onclick="offpenhome();">OFFENSIVE
+						PENALTIES</button</td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='offpenhome'></td>
@@ -172,16 +176,16 @@ button {
 		<table>
 
 			<tr>
-				<td><button onclick="">TFL</button</td>
-				<td><button onclick="">FUMBLE REC.</button></td>
-				<td><button onclick="">INTERC.</button></td>
-				<td><button onclick="">SACK</button></td>
+				<td><button onclick="tflhome();">TFL</button</td>
+				<td><button onclick="fumrechome();">FUMBLE REC.</button></td>
+				<td><button onclick="interceptreturnhome();">INTERC.</button></td>
+				<td><button onclick="sackhome();">SACK</button></td>
 
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='tflhome'></td>
 				<td><input size="5" type="text" value="0" id='fumrechome'></td>
-				<td><input size="5" type="text" value="0" id='interchome'></td>
+				<td><input size="5" type="text" value="0" id='intercreturnhome'></td>
 				<td><input size="5" type="text" value="0" id='sackhome'></td>
 
 			</tr>
@@ -191,7 +195,7 @@ button {
 		<table>
 
 			<tr>
-				<td><button onclick="">DEFENSIVE PENALTIES</button</td>
+				<td><button onclick="defpenhome();">DEFENSIVE PENALTIES</button</td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='defpenhome'></td>
@@ -201,6 +205,148 @@ button {
 
 	</div>
 
+	<script>
+		function touchbackhome() {
+			var x = parseInt(document.getElementById('touchbackhome').value);
+			x++;
+			document.getElementById('touchbackhome').value = x;
+		}
+		function kickreturnhome() {
+			var x = parseInt(document.getElementById('kickreturnhome').value);
+			x++;
+			document.getElementById('kickreturnhome').value = x;
+		}
+		function faircatchhome() {
+			var x = parseInt(document.getElementById('faircatchhome').value);
+			x++;
+			document.getElementById('faircatchhome').value = x;
+		}
+		function puntreturnhome() {
+			var x = parseInt(document.getElementById('puntreturnhome').value);
+			x++;
+			document.getElementById('puntreturnhome').value = x;
+		}
+		function firstdnhome() {
+			var x = parseInt(document.getElementById('1stdnhome').value);
+			x++;
+			document.getElementById('1stdnhome').value = x;
+		}
+		function thirdhomeyes() {
+			var x = parseInt(document.getElementById('3rdhomeyes').value);
+			x++;
+			document.getElementById('3rdhomeyes').value = x;
+		}
+		function thirdhomeno() {
+			var x = parseInt(document.getElementById('3rdhomeno').value);
+			x++;
+			document.getElementById('3rdhomeno').value = x;
+		}
+		function fourthhomeyes() {
+			var x = parseInt(document.getElementById('4thhomeyes').value);
+			x++;
+			document.getElementById('4thhomeyes').value = x;
+		}
+		function fourthhomeno() {
+			var x = parseInt(document.getElementById('4thhomeno').value);
+			x++;
+			document.getElementById('4thhomeno').value = x;
+		}
+		function runhome() {
+			var x = parseInt(document.getElementById('runhome').value);
+			x++;
+			document.getElementById('runhome').value = x;
+		}
+		function fumblehome() {
+			var x = parseInt(document.getElementById('fumblehome').value);
+			x++;
+			document.getElementById('fumblehome').value = x;
+		}
+		function passhome() {
+			var x = parseInt(document.getElementById('passhome').value);
+			x++;
+			document.getElementById('passhome').value = x;
+		}
+		function complhome() {
+			var x = parseInt(document.getElementById('complhome').value);
+			x++;
+			document.getElementById('complhome').value = x;
+		}
+		function incomphome() {
+			var x = parseInt(document.getElementById('incomphome').value);
+			x++;
+			document.getElementById('incomphome').value = x;
+		}
+		function intercepthome() {
+			var x = parseInt(document.getElementById('interchome').value);
+			x++;
+			document.getElementById('interchome').value = x;
+		}
+		function tdpasshome() {
+			var x = parseInt(document.getElementById('tdpasshome').value);
+			x++;
+			document.getElementById('tdpasshome').value = x;
+		}
+		function tdrunhome() {
+			var x = parseInt(document.getElementById('tdrunhome').value);
+			x++;
+			document.getElementById('tdrunhome').value = x;
+		}
+		function pathome() {
+			var x = parseInt(document.getElementById('pathome').value);
+			x++;
+			document.getElementById('pathome').value = x;
+		}
+		function fghome() {
+			var x = parseInt(document.getElementById('fghome').value);
+			x++;
+			document.getElementById('fghome').value = x;
+		}
+		function twopointhome() {
+			var x = parseInt(document.getElementById('2pthome').value);
+			x++;
+			document.getElementById('2pthome').value = x;
+		}
+		function penet50home() {
+			var x = parseInt(document.getElementById('penet50home').value);
+			x++;
+			document.getElementById('penet50home').value = x;
+		}
+		function penet20home() {
+			var x = parseInt(document.getElementById('penet20home').value);
+			x++;
+			document.getElementById('penet20home').value = x;
+		}
+		function offpenhome() {
+			var x = parseInt(document.getElementById('offpenhome').value);
+			x++;
+			document.getElementById('offpenhome').value = x;
+		}
+		function tflhome() {
+			var x = parseInt(document.getElementById('tflhome').value);
+			x++;
+			document.getElementById('tflhome').value = x;
+		}
+		function fumrechome() {
+			var x = parseInt(document.getElementById('fumrechome').value);
+			x++;
+			document.getElementById('fumrechome').value = x;
+		}
+		function interceptreturnhome() {
+			var x = parseInt(document.getElementById('intercreturnhome').value);
+			x++;
+			document.getElementById('intercreturnhome').value = x;
+		}
+		function sackhome() {
+			var x = parseInt(document.getElementById('sackhome').value);
+			x++;
+			document.getElementById('sackhome').value = x;
+		}
+		function defpenhome() {
+			var x = parseInt(document.getElementById('defpenhome').value);
+			x++;
+			document.getElementById('defpenhome').value = x;
+		}
+	</script>
 
 </body>
 </html>

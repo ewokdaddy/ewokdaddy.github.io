@@ -26,10 +26,11 @@ button {
 </style>
 </head>
 <body id="body">
+<br><br><br>
 	<a href="football_sc_h.html">HOME</a>
-	<script type="text/javascript" src="script6.js"></script>
+	
 
-	<h1 id="hometeam">VISITOR TEAM</h1>
+	<h1 id="visitorteam">VISITOR TEAM</h1>
 	<input size="5" type="text" value="team" id='thevisitorteam'>
 	<br>
 	<br>
@@ -42,9 +43,9 @@ button {
 				<td>KICKOFF</td>
 			</tr>
 			<tr>
-				<td><button onclick="">Touchback</button></td>
-				<td><button onclick="">Return</button></td>
-				<td><button onclick="">-</button></td>
+				<td><button onclick="touchbackvisitor();">Touchback</button></td>
+				<td><button onclick="kickreturnvisitor()">Return</button></td>
+				
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='touchbackvisitor'></td>
@@ -58,13 +59,13 @@ button {
 				<td>PUNT</td>
 			</tr>
 			<tr>
-				<td><button onclick="">Touchback/Faircatch</button></td>
-				<td><button onclick="">Return</button></td>
-				<td><button onclick="">-</button></td>
+				<td><button onclick="faircatchvisitor();">Touchback/Faircatch</button></td>
+				<td><button onclick="puntreturnvisitor();">Return</button></td>
+				
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0"
-					id='puntfaircatchvisitor'></td>
+					id='faircatchvisitor'></td>
 				<td><input size="5" type="text" value="0"
 					id='puntreturnvisitor'></td>
 			</tr>
@@ -78,8 +79,8 @@ button {
 				<td>1stDOWNS</td>
 			</tr>
 			<tr>
-				<td><button onclick="">+</button>
-					<button onclick="">-</button></td>
+				<td><button onclick="firstdnvisitor();">+</button>
+					
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='1stdnvisitor'>
@@ -89,8 +90,8 @@ button {
 				<td>3rdDOWN CONV</td>
 			</tr>
 			<tr>
-				<td><button onclick="">YES</button>
-					<button onclick="">NO</button></td>
+				<td><button onclick="thirdvisitoryes();">YES</button>
+					<button onclick="thirdvisitorno();">NO</button></td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='3rddnvisitoryes'>
@@ -101,8 +102,8 @@ button {
 				<td>4thDOWN CONV</td>
 			</tr>
 			<tr>
-				<td><button onclick="">YES</button>
-					<button onclick="">NO</button></td>
+				<td><button onclick="fourthvisitoryes() ">YES</button>
+					<button onclick="fourthvisitorno()">NO</button></td>
 			</tr>
 
 
@@ -117,17 +118,17 @@ button {
 		<table>
 
 			<tr>
-				<td><button onclick="">RUN</button</td>
-				<td><button onclick="">FUMBLE</button></td>
-				<td><button onclick="">PASS</button></td>
-				<td><button onclick="">COMPL</button></td>
-				<td><button onclick="">INCOMP</button></td>
-				<td><button onclick="">INTERCEPT</button></td>
-				<td><button onclick="">TD PASS</button></td>
-				<td><button onclick="">TD RUN</button></td>
-				<td><button onclick="">PAT</button></td>
-				<td><button onclick="">TD FG</button></td>
-				<td><button onclick="">2PT CONV</button></td>
+				<td><button onclick="runvisitor();">RUN</button</td>
+				<td><button onclick="fumblevisitor();">FUMBLE</button></td>
+				<td><button onclick="passvisitor();">PASS</button></td>
+				<td><button onclick="complvisitor();">COMPL</button></td>
+				<td><button onclick="incompvisitor();">INCOMP</button></td>
+				<td><button onclick="interceptvisitor();">INTERCEPT</button></td>
+				<td><button onclick="tdpassvisitor();">TD PASS</button></td>
+				<td><button onclick="tdrunvisitor();">TD RUN</button></td>
+				<td><button onclick="patvisitor();">PAT</button></td>
+				<td><button onclick="fgvisitor();">TD FG</button></td>
+				<td><button onclick="twopointvisitor();">2PT CONV</button></td>
 			</tr>
 
 			<tr>
@@ -151,8 +152,8 @@ button {
 
 		<table>
 			<tr>
-				<td><button onclick="">PENETRATE 50</button</td>
-				<td><button onclick="">PENETRATE 20</button</td>
+				<td><button onclick="penet50visitor();">PENETRATE 50</button</td>
+				<td><button onclick="penet20visitor(); ">PENETRATE 20</button</td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='penet50visitor'></td>
@@ -164,7 +165,7 @@ button {
 
 		<table>
 			<tr>
-				<td><button onclick="">OFFENSIVE PENALTIES</button</td>
+				<td><button onclick="offpenvisitor();">OFFENSIVE PENALTIES</button</td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='offpenvisitor'></td>
@@ -175,17 +176,17 @@ button {
 		<table>
 
 			<tr>
-				<td><button onclick="">TFL</button</td>
-				<td><button onclick="">FUMBLE REC.</button></td>
-				<td><button onclick="">INTERC.</button></td>
-				<td><button onclick="">SACK</button></td>
+				<td><button onclick="tflvisitor();">TFL</button</td>
+				<td><button onclick="fumrecvisitor();">FUMBLE REC.</button></td>
+				<td><button onclick="interceptreturnvisitor();">INTERC.</button></td>
+				<td><button onclick="sackvisitor();">SACK</button></td>
 
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='tflvisitor'></td>
 				<td><input size="5" type="text" value="0" id='fumrecvisitor'></td>
-				<td><input size="5" type="text" value="0" id='interdvisitor'></td>
-				<td><input size="5" type="text" value="0" id='sachvisitor'></td>
+				<td><input size="5" type="text" value="0" id='intercreturnvisitor'></td>
+				<td><input size="5" type="text" value="0" id='sackvisitor'></td>
 
 			</tr>
 		</table>
@@ -194,7 +195,7 @@ button {
 		<table>
 
 			<tr>
-				<td><button onclick="">DEFENSIVE PENALTIES</button</td>
+				<td><button onclick="defpenvisitor();">DEFENSIVE PENALTIES</button</td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='defpenvisitor'></td>
@@ -203,5 +204,149 @@ button {
 
 
 	</div>
+	
+	<script>
+		function touchbackvisitor() {
+			var x = parseInt(document.getElementById('touchbackvisitor').value);
+			x++;
+			document.getElementById('touchbackvisitor').value = x;
+		}
+		function kickreturnvisitor() {
+			var x = parseInt(document.getElementById('kickreturnvisitor').value);
+			x++;
+			document.getElementById('kickreturnvisitor').value = x;
+		}
+		function faircatchvisitor() {
+			var x = parseInt(document.getElementById('faircatchvisitor').value);
+			x++;
+			document.getElementById('faircatchvisitor').value = x;
+		}
+		function puntreturnvisitor() {
+			var x = parseInt(document.getElementById('puntreturnvisitor').value);
+			x++;
+			document.getElementById('puntreturnvisitor').value = x;
+		}
+		function firstdnvisitor() {
+			var x = parseInt(document.getElementById('1stdnvisitor').value);
+			x++;
+			document.getElementById('1stdnvisitor').value = x;
+		}
+		function thirdvisitoryes() {
+			var x = parseInt(document.getElementById('3rddnvisitoryes').value);
+			x++;
+			document.getElementById('3rddnvisitoryes').value = x;
+		}
+		function thirdvisitorno() {
+			var x = parseInt(document.getElementById('3rddnvisitorno').value);
+			x++;
+			document.getElementById('3rddnvisitorno').value = x;
+		}
+		function fourthvisitoryes() {
+			var x = parseInt(document.getElementById('4thdnvisitoryes').value);
+			x++;
+			document.getElementById('4thdnvisitoryes').value = x;
+		}
+		function fourthvisitorno() {
+			var x = parseInt(document.getElementById('4thdnvisitorno').value);
+			x++;
+			document.getElementById('4thdnvisitorno').value = x;
+		}
+		function runvisitor() {
+			var x = parseInt(document.getElementById('runvisitor').value);
+			x++;
+			document.getElementById('runvisitor').value = x;
+		}
+		function fumblevisitor() {
+			var x = parseInt(document.getElementById('fumblevisitor').value);
+			x++;
+			document.getElementById('fumblevisitor').value = x;
+		}
+		function passvisitor() {
+			var x = parseInt(document.getElementById('passvisitor').value);
+			x++;
+			document.getElementById('passvisitor').value = x;
+		}
+		function complvisitor() {
+			var x = parseInt(document.getElementById('complvisitor').value);
+			x++;
+			document.getElementById('complvisitor').value = x;
+		}
+		function incompvisitor() {
+			var x = parseInt(document.getElementById('incompvisitor').value);
+			x++;
+			document.getElementById('incompvisitor').value = x;
+		}
+		function interceptvisitor() {
+			var x = parseInt(document.getElementById('intercvisitor').value);
+			x++;
+			document.getElementById('intercvisitor').value = x;
+		}
+		function tdpassvisitor() {
+			var x = parseInt(document.getElementById('tdpassvisitor').value);
+			x++;
+			document.getElementById('tdpassvisitor').value = x;
+		}
+		function tdrunvisitor() {
+			var x = parseInt(document.getElementById('tdrunvisitor').value);
+			x++;
+			document.getElementById('tdrunvisitor').value = x;
+		}
+		function patvisitor() {
+			var x = parseInt(document.getElementById('patvisitor').value);
+			x++;
+			document.getElementById('patvisitor').value = x;
+		}
+		function fgvisitor() {
+			var x = parseInt(document.getElementById('fgvisitor').value);
+			x++;
+			document.getElementById('fgvisitor').value = x;
+		}
+		function twopointvisitor() {
+			var x = parseInt(document.getElementById('2ptvisitor').value);
+			x++;
+			document.getElementById('2ptvisitor').value = x;
+		}
+		function penet50visitor() {
+			var x = parseInt(document.getElementById('penet50visitor').value);
+			x++;
+			document.getElementById('penet50visitor').value = x;
+		}
+		function penet20visitor() {
+			var x = parseInt(document.getElementById('penet20visitor').value);
+			x++;
+			document.getElementById('penet20visitor').value = x;
+		}
+		function offpenvisitor() {
+			var x = parseInt(document.getElementById('offpenvisitor').value);
+			x++;
+			document.getElementById('offpenvisitor').value = x;
+		}
+		function tflvisitor() {
+			var x = parseInt(document.getElementById('tflvisitor').value);
+			x++;
+			document.getElementById('tflvisitor').value = x;
+		}
+		function fumrecvisitor() {
+			var x = parseInt(document.getElementById('fumrecvisitor').value);
+			x++;
+			document.getElementById('fumrecvisitor').value = x;
+		}
+		function interceptreturnvisitor() {
+			var x = parseInt(document.getElementById('intercreturnvisitor').value);
+			x++;
+			document.getElementById('intercreturnvisitor').value = x;
+		}
+		function sackvisitor() {
+			var x = parseInt(document.getElementById('sackvisitor').value);
+			x++;
+			document.getElementById('sackvisitor').value = x;
+		}
+		function defpenvisitor() {
+			var x = parseInt(document.getElementById('defpenvisitor').value);
+			x++;
+			document.getElementById('defpenvisitor').value = x;
+		}
+	</script>
+	
 </body>
 </html>
