@@ -313,12 +313,23 @@
 	<div>
 		Enter The Home Team <input type="text" placeholder="Home Team"
 			style="text-transform: uppercase" maxlength="20" size="20"
-			id="homefootballteam"> <br> Enter The Visitor Team <input
+			id="homefootballteam" onkeypress="storefootballteams();"> 
+			
+			<br> Enter The Visitor Team <input
 			type="text" placeholder="Visitor Team"
 			style="text-transform: uppercase" maxlength="20" size="20"
-			id="visitorfootballteam"> 
-			<br> 
-			<a href="football_sc_h.html">Football Scoring Page</a>
+			id="visitorfootballteam" onkeypress="storefootballteams();"> <br> <a
+			href="football_sc_h.html">Football Scoring Page</a>
+		<script type="text/javascript">
+			function storefootballteams()
+			{
+				localStorage.setItem("homefootballteam", document
+						.getElementById('homefootballteam').value);
+				localStorage.setItem("visitorfootballteam", document
+						.getElementById('visitorfootballteam').value);
+
+			}
+		</script>
 	</div>
 	<br>
 	<br>

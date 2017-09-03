@@ -4,12 +4,16 @@
 <meta charset="UTF-8">
 <title>FOOTBALL SCORESHEET HOME</title>
 <style>
+#table1, #table2, #table3, #table4, #table5, #table6, #table7, #table8, div {
+font-size: 40px;
+}
 #body {
 	background-color: lightgreen;
 }
 
-button {
+button, input {
 	background-color: lightblue;
+	font-size: 40px;
 }
 
 #hometeam {
@@ -28,23 +32,27 @@ button {
 <body id="body">
 	<br>
 	<br>
-	<br>
 	<a href="football_sc_v.html">VISITOR</a>
 	<h1 id="hometeam">HOME TEAM</h1>
-	<input size="5" type="text" value="team" id='thehometeam'>
+	<br>
+
+	<br>
+	<br>
+	<input style="text-transform: uppercase" size="10" type="text"
+		value="team" id='thehometeam'>
 	<br>
 	<br>
 	<br>
 	<br>
 
 	<div>
-		<table>
+		<table id="table1">
 			<tr>
 				<td>KICKOFF</td>
 			</tr>
 			<tr>
-				<td><button onclick="touchbackhome();">Touchback</button></td>
-				<td><button onclick="kickreturnhome();">Return</button></td>
+				<td><button id="b1" onclick="touchbackhome();">Touchback</button></td>
+				<td><button id="b2" onclick="kickreturnhome();">Return</button></td>
 
 			</tr>
 			<tr>
@@ -53,7 +61,7 @@ button {
 			</tr>
 		</table>
 		<br>
-		<table>
+		<table id="table2">
 			<tr>
 				<td>PUNT</td>
 			</tr>
@@ -74,7 +82,7 @@ button {
 	<br>
 
 	<div>
-		<table>
+		<table id="table3">
 			<tr>
 				<td>1stDOWNS</td>
 			</tr>
@@ -114,7 +122,7 @@ button {
 		</table>
 		<br>
 		<div>OFFENSIVE PLAYS</div>
-		<table>
+		<table id="table4">
 
 			<tr>
 				<td><button onclick="runhome();">RUN</button</td>
@@ -149,7 +157,7 @@ button {
 
 		</table>
 
-		<table>
+		<table id="table5">
 			<tr>
 				<td><button onclick="penet50home();">PENETRATE 50</button</td>
 				<td><button onclick="penet20home();">PENETRATE 20</button</td>
@@ -162,7 +170,7 @@ button {
 
 
 
-		<table>
+		<table id="table6">
 			<tr>
 				<td><button onclick="offpenhome();">OFFENSIVE
 						PENALTIES</button</td>
@@ -172,8 +180,9 @@ button {
 			</tr>
 		</table>
 		<br>
+		
 		<div>DEFFENSIVE PLAYS</div>
-		<table>
+		<table id="table7">
 
 			<tr>
 				<td><button onclick="tflhome();">TFL</button</td>
@@ -192,10 +201,11 @@ button {
 		</table>
 
 		<div></div>
-		<table>
+		<table id="table8">
 
 			<tr>
-				<td><button onclick="defpenhome();">DEFENSIVE PENALTIES</button</td>
+				<td><button onclick="defpenhome();">DEFENSIVE
+						PENALTIES</button</td>
 			</tr>
 			<tr>
 				<td><input size="5" type="text" value="0" id='defpenhome'></td>
@@ -206,147 +216,211 @@ button {
 	</div>
 
 	<script>
+		document.getElementById('thehometeam').value = localStorage
+				.getItem("homefootballteam");
+
 		function touchbackhome() {
 			var x = parseInt(document.getElementById('touchbackhome').value);
 			x++;
 			document.getElementById('touchbackhome').value = x;
+			localStorage.setItem("touchbackhome", document
+					.getElementById('touchbackhome').value);
 		}
 		function kickreturnhome() {
 			var x = parseInt(document.getElementById('kickreturnhome').value);
 			x++;
 			document.getElementById('kickreturnhome').value = x;
+			localStorage.setItem("kickreturnhome", document
+					.getElementById('kickreturnhome').value);
 		}
 		function faircatchhome() {
 			var x = parseInt(document.getElementById('faircatchhome').value);
 			x++;
 			document.getElementById('faircatchhome').value = x;
+			localStorage.setItem("faircatchhome", document
+					.getElementById('faircatchhome').value);
 		}
 		function puntreturnhome() {
 			var x = parseInt(document.getElementById('puntreturnhome').value);
 			x++;
 			document.getElementById('puntreturnhome').value = x;
+			localStorage.setItem("puntreturnhome", document
+					.getElementById('puntreturnhome').value);
 		}
 		function firstdnhome() {
 			var x = parseInt(document.getElementById('1stdnhome').value);
 			x++;
 			document.getElementById('1stdnhome').value = x;
+			localStorage.setItem("1stdnhome", document
+					.getElementById('1stdnhome').value);
 		}
 		function thirdhomeyes() {
 			var x = parseInt(document.getElementById('3rdhomeyes').value);
 			x++;
 			document.getElementById('3rdhomeyes').value = x;
+			localStorage.setItem("3rdhomeyes", document
+					.getElementById('3rdhomeyes').value);
 		}
 		function thirdhomeno() {
 			var x = parseInt(document.getElementById('3rdhomeno').value);
 			x++;
 			document.getElementById('3rdhomeno').value = x;
+			localStorage.setItem("3rdhomeno", document
+					.getElementById('3rdhomeno').value);
 		}
 		function fourthhomeyes() {
 			var x = parseInt(document.getElementById('4thhomeyes').value);
 			x++;
 			document.getElementById('4thhomeyes').value = x;
+			localStorage.setItem("4thhomeyes", document
+					.getElementById('4thhomeyes').value);
 		}
 		function fourthhomeno() {
 			var x = parseInt(document.getElementById('4thhomeno').value);
 			x++;
 			document.getElementById('4thhomeno').value = x;
+			localStorage.setItem("4thhomeno", document
+					.getElementById('4thhomeno').value);
 		}
 		function runhome() {
 			var x = parseInt(document.getElementById('runhome').value);
 			x++;
 			document.getElementById('runhome').value = x;
+			localStorage.setItem("runhome",
+					document.getElementById('runhome').value);
 		}
 		function fumblehome() {
 			var x = parseInt(document.getElementById('fumblehome').value);
 			x++;
 			document.getElementById('fumblehome').value = x;
+			localStorage.setItem("fumblehome", document
+					.getElementById('fumblehome').value);
 		}
 		function passhome() {
 			var x = parseInt(document.getElementById('passhome').value);
 			x++;
 			document.getElementById('passhome').value = x;
+			localStorage.setItem("passhome", document
+					.getElementById('passhome').value);
 		}
 		function complhome() {
 			var x = parseInt(document.getElementById('complhome').value);
 			x++;
 			document.getElementById('complhome').value = x;
+			localStorage.setItem("complhome", document
+					.getElementById('complhome').value);
 		}
 		function incomphome() {
 			var x = parseInt(document.getElementById('incomphome').value);
 			x++;
 			document.getElementById('incomphome').value = x;
+			localStorage.setItem("incomphome", document
+					.getElementById('incomphome').value);
 		}
 		function intercepthome() {
 			var x = parseInt(document.getElementById('interchome').value);
 			x++;
 			document.getElementById('interchome').value = x;
+			localStorage.setItem("interchome", document
+					.getElementById('interchome').value);
 		}
 		function tdpasshome() {
 			var x = parseInt(document.getElementById('tdpasshome').value);
 			x++;
 			document.getElementById('tdpasshome').value = x;
+			localStorage.setItem("tdpasshome", document
+					.getElementById('tdpasshome').value);
 		}
 		function tdrunhome() {
 			var x = parseInt(document.getElementById('tdrunhome').value);
 			x++;
 			document.getElementById('tdrunhome').value = x;
+			localStorage.setItem("tdrunhome", document
+					.getElementById('tdrunhome').value);
 		}
 		function pathome() {
 			var x = parseInt(document.getElementById('pathome').value);
 			x++;
 			document.getElementById('pathome').value = x;
+			localStorage.setItem("pathome",
+					document.getElementById('pathome').value);
 		}
 		function fghome() {
 			var x = parseInt(document.getElementById('fghome').value);
 			x++;
 			document.getElementById('fghome').value = x;
+			localStorage.setItem("fghome",
+					document.getElementById('fghome').value);
 		}
 		function twopointhome() {
 			var x = parseInt(document.getElementById('2pthome').value);
 			x++;
 			document.getElementById('2pthome').value = x;
+			localStorage.setItem("2pthome",
+					document.getElementById('2pthome').value);
 		}
 		function penet50home() {
 			var x = parseInt(document.getElementById('penet50home').value);
 			x++;
 			document.getElementById('penet50home').value = x;
+			localStorage.setItem("penet50home", document
+					.getElementById('penet50home').value);
 		}
 		function penet20home() {
 			var x = parseInt(document.getElementById('penet20home').value);
 			x++;
 			document.getElementById('penet20home').value = x;
+			localStorage.setItem("penet20home", document
+					.getElementById('penet20home').value);
 		}
 		function offpenhome() {
 			var x = parseInt(document.getElementById('offpenhome').value);
 			x++;
 			document.getElementById('offpenhome').value = x;
+			localStorage.setItem("offpenhome", document
+					.getElementById('offpenhome').value);
 		}
 		function tflhome() {
 			var x = parseInt(document.getElementById('tflhome').value);
 			x++;
 			document.getElementById('tflhome').value = x;
+			localStorage.setItem("tflhome",
+					document.getElementById('tflhome').value);
 		}
 		function fumrechome() {
 			var x = parseInt(document.getElementById('fumrechome').value);
 			x++;
 			document.getElementById('fumrechome').value = x;
+			localStorage.setItem("fumrechome", document
+					.getElementById('fumrechome').value);
 		}
 		function interceptreturnhome() {
 			var x = parseInt(document.getElementById('intercreturnhome').value);
 			x++;
 			document.getElementById('intercreturnhome').value = x;
+			localStorage.setItem("intercreturnhome", document
+					.getElementById('intercreturnhome').value);
 		}
 		function sackhome() {
 			var x = parseInt(document.getElementById('sackhome').value);
 			x++;
 			document.getElementById('sackhome').value = x;
+			localStorage.setItem("sackhome", document
+					.getElementById('sackhome').value);
 		}
 		function defpenhome() {
 			var x = parseInt(document.getElementById('defpenhome').value);
 			x++;
 			document.getElementById('defpenhome').value = x;
+			localStorage.setItem("defpenhome", document
+					.getElementById('defpenhome').value);
 		}
 	</script>
-
-</body>
+	<br>
+	<br>
+	<button onclick="localStorage.clear();">START FRESH</button>
+	<button>RECALL STORAGE</button>
+	<br>
+	<br>
+	</body>
 </html>

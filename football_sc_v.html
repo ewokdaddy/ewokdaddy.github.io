@@ -31,7 +31,7 @@ button {
 	
 
 	<h1 id="visitorteam">VISITOR TEAM</h1>
-	<input size="5" type="text" value="team" id='thevisitorteam'>
+	<input style="text-transform: uppercase" size="10" type="text" value="team" id='thevisitorteam'>
 	<br>
 	<br>
 	<br>
@@ -206,6 +206,7 @@ button {
 	</div>
 	
 	<script>
+	document.getElementById('thevisitorteam').value = localStorage.getItem("visitorfootballteam");
 		function touchbackvisitor() {
 			var x = parseInt(document.getElementById('touchbackvisitor').value);
 			x++;
