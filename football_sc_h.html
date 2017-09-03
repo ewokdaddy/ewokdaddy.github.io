@@ -5,15 +5,18 @@
 <title>FOOTBALL SCORESHEET HOME</title>
 <style>
 #table1, #table2, #table3, #table4, #table5, #table6, #table7, #table8, div {
-font-size: 40px;
+font-size: 50px;
 }
 #body {
 	background-color: lightgreen;
 }
-
-button, input {
+input {
+background-color: white;
+	font-size: 50px;
+}
+button {
 	background-color: lightblue;
-	font-size: 40px;
+	font-size: 50px;
 }
 
 #hometeam {
@@ -136,6 +139,7 @@ button, input {
 				<td><button onclick="pathome();">PAT</button></td>
 				<td><button onclick="fghome();">FG</button></td>
 				<td><button onclick="twopointhome();">2PT CONV</button></td>
+				
 			</tr>
 
 			<tr>
@@ -151,12 +155,13 @@ button, input {
 				<td><input size="5" type="text" value="0" id='pathome'></td>
 				<td><input size="5" type="text" value="0" id='fghome'></td>
 				<td><input size="5" type="text" value="0" id='2pthome'></td>
+				
 
 			</tr>
 
 
 		</table>
-
+<br>
 		<table id="table5">
 			<tr>
 				<td><button onclick="penet50home();">PENETRATE 50</button</td>
