@@ -4,16 +4,20 @@
 <meta charset="UTF-8">
 <title>FOOTBALL SCORESHEET HOME</title>
 <style>
-#table1, #table2, #table3, #table4, #table5, #table6, #table7, #table8, div {
-font-size: 50px;
+#table1, #table2, #table3, #table4, #table5, #table6, #table7, #table8,
+	div {
+	font-size: 50px;
 }
+
 #body {
 	background-color: lightgreen;
 }
+
 input {
-background-color: white;
+	background-color: white;
 	font-size: 50px;
 }
+
 button {
 	background-color: lightblue;
 	font-size: 50px;
@@ -139,7 +143,7 @@ button {
 				<td><button onclick="pathome();">PAT</button></td>
 				<td><button onclick="fghome();">FG</button></td>
 				<td><button onclick="twopointhome();">2PT CONV</button></td>
-				
+
 			</tr>
 
 			<tr>
@@ -155,13 +159,13 @@ button {
 				<td><input size="5" type="text" value="0" id='pathome'></td>
 				<td><input size="5" type="text" value="0" id='fghome'></td>
 				<td><input size="5" type="text" value="0" id='2pthome'></td>
-				
+
 
 			</tr>
 
 
 		</table>
-<br>
+		<br>
 		<table id="table5">
 			<tr>
 				<td><button onclick="penet50home();">PENETRATE 50</button</td>
@@ -185,7 +189,7 @@ button {
 			</tr>
 		</table>
 		<br>
-		
+
 		<div>DEFFENSIVE PLAYS</div>
 		<table id="table7">
 
@@ -223,7 +227,6 @@ button {
 	<script>
 		document.getElementById('thehometeam').value = localStorage
 				.getItem("homefootballteam");
-
 		function touchbackhome() {
 			var x = parseInt(document.getElementById('touchbackhome').value);
 			x++;
@@ -420,12 +423,134 @@ button {
 			localStorage.setItem("defpenhome", document
 					.getElementById('defpenhome').value);
 		}
+		
+		function getAll() {
+			document.getElementById('touchbackhome').value = localStorage
+			.getItem("touchbackhome");
+			document.getElementById('kickreturnhome').value = localStorage
+			.getItem("kickreturnhome");
+			document.getElementById('faircatchhome').value = localStorage
+			.getItem("faircatchhome");
+			document.getElementById('puntreturnhome').value = localStorage
+			.getItem("puntreturnhome");
+			document.getElementById('1stdnhome').value = localStorage
+			.getItem("1stdnhome");
+			document.getElementById('3rdhomeyes').value = localStorage
+			.getItem("3rdhomeyes");
+			document.getElementById('3rdhomeno').value = localStorage
+			.getItem("3rdhomeno");
+			document.getElementById('4thhomeyes').value = localStorage
+			.getItem("4thhomeyes");
+			document.getElementById('4thhomeno').value = localStorage
+			.getItem("4thhomeno");
+			document.getElementById('runhome').value = localStorage
+			.getItem("runhome");
+			document.getElementById('fumblehome').value = localStorage
+			.getItem("fumblehome");
+			document.getElementById('passhome').value = localStorage
+			.getItem("passhome");
+			document.getElementById('complhome').value = localStorage
+			.getItem("complhome");
+			document.getElementById('incomphome').value = localStorage
+			.getItem("incomphome");
+			document.getElementById('interchome').value = localStorage
+			.getItem("interchome");
+			document.getElementById('tdpasshome').value = localStorage
+			.getItem("tdpasshome");
+			document.getElementById('tdrunhome').value = localStorage
+			.getItem("tdrunhome");
+			document.getElementById('pathome').value = localStorage
+			.getItem("pathome");
+			document.getElementById('fghome').value = localStorage
+			.getItem("fghome");
+			document.getElementById('2pthome').value = localStorage
+			.getItem("2pthome");
+			document.getElementById('penet50home').value = localStorage
+			.getItem("penet50home");
+			document.getElementById('penet20home').value = localStorage
+			.getItem("penet20home");
+			document.getElementById('offpenhome').value = localStorage
+			.getItem("offpenhome");
+			document.getElementById('tflhome').value = localStorage
+			.getItem("tflhome");
+			document.getElementById('fumrechome').value = localStorage
+			.getItem("fumrechome");
+			document.getElementById('intercreturnhome').value = localStorage
+			.getItem("intercreturnhome");
+			document.getElementById('sackhome').value = localStorage
+			.getItem("sackhome");
+			document.getElementById('defpenhome').value = localStorage
+			.getItem("defpenhome");
+			
+		}
+		
+		function setAll() {
+			localStorage.setItem("touchbackhome", document
+					.getElementById('touchbackhome').value);
+			localStorage.setItem("kickreturnhome", document
+					.getElementById('kickreturnhome').value);
+			localStorage.setItem("faircatchhome", document
+					.getElementById('faircatchhome').value);
+			localStorage.setItem("puntreturnhome", document
+					.getElementById('puntreturnhome').value);
+			localStorage.setItem("1stdnhome", document
+					.getElementById('1stdnhome').value);
+			localStorage.setItem("3rdhomeyes", document
+					.getElementById('3rdhomeyes').value);
+			localStorage.setItem("3rdhomeno", document
+					.getElementById('3rdhomeno').value);
+			localStorage.setItem("4thhomeyes", document
+					.getElementById('4thhomeyes').value);
+			localStorage.setItem("4thhomeno", document
+					.getElementById('4thhomeno').value);
+			localStorage.setItem("runhome", document
+					.getElementById('runhome').value);
+			localStorage.setItem("fumblehome", document
+					.getElementById('fumblehome').value);
+			localStorage.setItem("passhome", document
+					.getElementById('passhome').value);
+			localStorage.setItem("complhome", document
+					.getElementById('complhome').value);
+			localStorage.setItem("incomphome", document
+					.getElementById('incomphome').value);
+			localStorage.setItem("interchome", document
+					.getElementById('interchome').value);
+			localStorage.setItem("tdpasshome", document
+					.getElementById('tdpasshome').value);
+			localStorage.setItem("tdrunhome", document
+					.getElementById('tdrunhome').value);
+			localStorage.setItem("pathome",
+					document.getElementById('pathome').value);
+			localStorage.setItem("fghome",
+					document.getElementById('fghome').value);
+			localStorage.setItem("2pthome",
+					document.getElementById('2pthome').value);
+			localStorage.setItem("penet50home", document
+					.getElementById('penet50home').value);
+			localStorage.setItem("penet20home", document
+					.getElementById('penet20home').value);
+			localStorage.setItem("offpenhome", document
+					.getElementById('offpenhome').value);
+			localStorage.setItem("tflhome",
+					document.getElementById('tflhome').value);
+			localStorage.setItem("fumrechome", document
+					.getElementById('fumrechome').value);
+			localStorage.setItem("intercreturnhome", document
+					.getElementById('intercreturnhome').value);
+			localStorage.setItem("sackhome", document
+					.getElementById('sackhome').value);
+			localStorage.setItem("defpenhome", document
+					.getElementById('defpenhome').value);
+			
+		}
+		
 	</script>
 	<br>
 	<br>
 	<button onclick="localStorage.clear();">START FRESH</button>
-	<button>RECALL STORAGE</button>
+	<button onclick="setAll();">STORE DATA</button>
+	<button onclick="getAll();">RECALL STORAGE</button>
 	<br>
 	<br>
-	</body>
+</body>
 </html>
