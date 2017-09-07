@@ -7,28 +7,35 @@
 #body {
 	background-color: lightgreen;
 }
-#strikestop, #strikesbot, #ballstop, #ballsbot {
-font-size: 30px;
+#strikestop, #strikesbot, #strikestop, #ballstop, #ballsbot {
+font-size: 40px;
+background-color: lightyellow;
 }
+ #totalbot, #totaltop {
+ font-size: 40px;
+ background-color: yellow;
+ }
 
 </style>
 </head>
 <body id="body">
 <input size="3" type="text" id='strikestop' value="0">
 <input size="3" type="text" id="ballstop" value="0">
+<input size="3" type="text" id="totaltop" value="0">
 		<br>
 	<svg width="700" height="1400" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
  <g>
   <title>Layer 1</title>
-  <rect id="topredballs" stroke="red" height="600" width="586" y="740" x="60" stroke-width="5" fill="red"/>
-  <rect id="topgreenstrikes" stroke="green" fill="green" stroke-width="5" x="255" y="915" width="176" height="265" />
-  <rect id="botredballs" stroke="red" height="600" width="586" y="60" x="60" stroke-width="5" fill="red"/>
-  <rect id="botgreenstrikes" stroke="green" fill="green" stroke-width="5" x="255" y="210" width="181" height="285"/>
+  <rect id="topredballs" height="600" width="586" y="740" x="60" fill="red"/>
+  <rect id="topgreenstrikes" fill="green" x="255" y="915" width="176" height="265" />
+  <rect id="botredballs" height="600" width="586" y="60" x="60" fill="red"/>
+  <rect id="botgreenstrikes" fill="green" x="255" y="210" width="181" height="285"/>
  </g>
 </svg>
 <br>
 <input size="3" type="text" id='strikesbot' value="0">
 <input size="3" type="text" id="ballsbot" value="0">
+<input size="3" type="text" id="totalbot" value="0">
 </body>
 </html>
