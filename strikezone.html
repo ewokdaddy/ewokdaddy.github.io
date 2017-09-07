@@ -23,18 +23,18 @@ background-color: lightyellow;
 </style>
 </head>
 <body id="body">
-<input size="3" type="text" id='strikestop' value="0">
-<input size="3" type="text" id="ballstop" value="0">
-<input size="3" type="text" id="totaltop" value="0">
+<input size="2" type="text" id='strikestop' value="0">
+<input size="2" type="text" id="ballstop" value="0">
+<input size="2" type="text" id="totaltop" value="0">
 <button onclick="zero4newpitchertop();" id="newpitcherbuttontop">NEW PITCHER</button>
 		<br>
 	<svg width="700" height="1400" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <g>
   <title>Layer 1</title>
-  <rect id="topredballs" height="600" width="586" y="740" x="60" fill="red"/>
-  <rect id="topgreenstrikes" fill="green" x="255" y="915" width="176" height="265" />
-  <rect id="botredballs" height="600" width="586" y="60" x="60" fill="red"/>
-  <rect id="botgreenstrikes" fill="green" x="255" y="210" width="181" height="285"/>
+  <rect onclick="incrementballstop(); addpitchestop();"  y="60" x="60" height="600" width="586" fill="red" id="topredballs"/>
+  <rect onclick="incrementstrikestop(); addpitchestop();"  x="255" y="210" width="181" height="285" fill="green" id="topgreenstrikes"/>
+  <rect onclick="incrementballsbot(); addpitchesbot();"  y="740" x="60" height="600" width="586" fill="red" id="botredballs"/>
+  <rect onclick="incrementstrikesbot(); addpitchesbot();"  x="255" y="915" width="176" height="265" fill="green" id="botgreenstrikes" />
  </g>
 </svg>
 <br>
@@ -43,6 +43,54 @@ background-color: lightyellow;
 <input size="3" type="text" id="totalbot" value="0">
 <button onclick="zero4newpitcherbot();" id="newpitcherbuttonbot">NEW PITCHER</button>
 
+<script>
+function addpitchestop() {
+	var strikes = parseInt(document.getElementById('strikestop').value);
+	var balls = parseInt(document.getElementById('ballstop').value);
+	var pitches = strikes + balls;
+	document.getElementById('totaltop').value = pitches;
+}
+function addpitchesbot() {
+	var strikes = parseInt(document.getElementById('strikesbot').value);
+	var balls = parseInt(document.getElementById('ballsbot').value);
+	var pitches = strikes + balls;
+	document.getElementById('totalbot').value = pitches;
+}
+function incrementballstop() {
+	var pitch = parseInt(document.getElementById('ballstop').value);
+	pitch++;
+	document.getElementById('ballstop').value = pitch;
+	
+}
+function incrementstrikestop() {
+	var pitch = parseInt(document.getElementById('strikestop').value);
+	pitch++;
+	document.getElementById('strikestop').value = pitch;
+}
+function incrementballsbot() {
+	var pitch = parseInt(document.getElementById('ballsbot').value);
+	pitch++;
+	document.getElementById('ballsbot').value = pitch;
+}
+function incrementstrikesbot() {
+	var pitch = parseInt(document.getElementById('strikesbot').value);
+	pitch++;
+	document.getElementById('strikesbot').value = pitch;
+}
+function zero4newpitchertop() {
+	var pitch = 0;
+	document.getElementById('ballstop').value = pitch;
+	document.getElementById('strikestop').value = pitch;
+	document.getElementById('totaltop').value = pitch;
+}
+function zero4newpitcherbot() {
+	var pitch = 0;
+	document.getElementById('ballsbot').value = pitch;
+	document.getElementById('strikesbot').value = pitch;
+	document.getElementById('totalbot').value = pitch;
+	
+}
+</script>
 
 </body>
 </html>
