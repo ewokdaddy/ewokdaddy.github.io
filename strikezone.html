@@ -24,6 +24,7 @@ background-color: lightyellow;
 </head>
 <body id="body">
 <h1>TOP</h1>
+<b id="actiont"></b>
 <input size="2" type="text" id='strikestop' value="0">
 <input size="2" type="text" id="ballstop" value="0">
 <input size="2" type="text" id="totaltop" value="0">
@@ -39,12 +40,14 @@ background-color: lightyellow;
  </g>
 </svg>
 <br>
+<b id="actionb"></b>
 <input size="3" type="text" id='strikesbot' value="0">
 <input size="3" type="text" id="ballsbot" value="0">
 <input size="3" type="text" id="totalbot" value="0">
 <button onclick="zero4newpitcherbot();" id="newpitcherbuttonbot">NEW PITCHER</button>
 
 <script>
+var delay = 500;
 function addpitchestop() {
 	var strikes = parseInt(document.getElementById('strikestop').value);
 	var balls = parseInt(document.getElementById('ballstop').value);
@@ -62,21 +65,41 @@ function incrementballstop() {
 	pitch++;
 	document.getElementById('ballstop').value = pitch;
 	
+	document.getElementById("actiont").innerHTML = "HI";
+	setTimeout(function() {
+		document.getElementById("actiont").innerHTML = " ";
+	}, delay);
+	
 }
 function incrementstrikestop() {
 	var pitch = parseInt(document.getElementById('strikestop').value);
 	pitch++;
 	document.getElementById('strikestop').value = pitch;
+	
+	document.getElementById("actiont").innerHTML = "HI";
+	setTimeout(function() {
+		document.getElementById("actiont").innerHTML = " ";
+	}, delay);
 }
 function incrementballsbot() {
 	var pitch = parseInt(document.getElementById('ballsbot').value);
 	pitch++;
 	document.getElementById('ballsbot').value = pitch;
+	
+	document.getElementById("actionb").innerHTML = "HI";
+	setTimeout(function() {
+		document.getElementById("actionb").innerHTML = " ";
+	}, delay);
 }
 function incrementstrikesbot() {
 	var pitch = parseInt(document.getElementById('strikesbot').value);
 	pitch++;
 	document.getElementById('strikesbot').value = pitch;
+	
+	document.getElementById("actionb").innerHTML = "HI";
+	setTimeout(function() {
+		document.getElementById("actionb").innerHTML = " ";
+	}, delay);
 }
 function zero4newpitchertop() {
 	var pitch = 0;
