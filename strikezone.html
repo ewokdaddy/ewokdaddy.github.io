@@ -9,7 +9,7 @@
 }
 
 #sv_window {
-background-color: lightblue;
+	background-color: lightblue;
 }
 
 #strikestop, #strikesbot, #strikestop, #ballstop, #ballsbot {
@@ -32,13 +32,17 @@ background-color: lightblue;
 }
 </style>
 <script>
-function readMouseMove(e) {
-	var result_x = document.getElementById('x_result');
-	var result_y = document.getElementById('y_result');
-	result_x.innerHTML = e.clientX;
-	result_y.innerHTML = e.clientY;
-}
-document.onmousemove = readMouseMove;
+	function readMouseMove(e) {
+		var result_x = document.getElementById('x_result');
+		var result_y = document.getElementById('y_result');
+		var result_xb = document.getElementById('xb_result');
+		var result_yb = document.getElementById('yb_result');
+		result_x.innerHTML = e.clientX;
+		result_y.innerHTML = e.clientY;
+		result_xb.innerHTML = e.clientX;
+		result_yb.innerHTML = e.clientY;
+	}
+	document.onmousemove = readMouseMove;
 </script>
 </head>
 <body id="body">
@@ -51,19 +55,25 @@ document.onmousemove = readMouseMove;
 	<input size="2" type="text" id="totaltop" value="0">
 	<br>
 	<button onclick="zero4newpitchertop();" id="newpitcherbuttontop">NEW
-		PITCHER</button>&nbsp;&nbsp;
+		PITCHER</button>
+	&nbsp;&nbsp;
 	<button onclick="recall();" id="recall">RECALL</button>
 	<br>
-	
-	
-	<svg id="sv_window" width="700" height="1800" xmlns="http://www.w3.org/2000/svg"
+
+
+	<svg id="sv_window" width="700" height="1800"
+		xmlns="http://www.w3.org/2000/svg"
 		xmlns:svg="http://www.w3.org/2000/svg">
  <g>
   <title>BALLS AND STRIKES</title>
-  <rect onclick="incrementballstop(); addpitchestop();" y="60" x="60" height="600" width="586" fill="red" id="topredballs" />
-  <rect onclick="incrementstrikestop(); addpitchestop();" x="255" y="210" width="181" height="285" fill="green" id="topgreenstrikes" />
-  <rect onclick="incrementballsbot(); addpitchesbot();" y="1090" x="60" height="600" width="586" fill="red" id="botredballs" />
-  <rect onclick="incrementstrikesbot(); addpitchesbot();" x="255" y="1250" width="176" height="265" fill="green" id="botgreenstrikes" />
+  <rect onclick="incrementballstop(); addpitchestop();" y="60" x="60"
+			height="600" width="586" fill="red" id="topredballs" />
+  <rect onclick="incrementstrikestop(); addpitchestop();" x="255"
+			y="210" width="181" height="285" fill="green" id="topgreenstrikes" />
+  <rect onclick="incrementballsbot(); addpitchesbot();" y="1090" x="60"
+			height="600" width="586" fill="red" id="botredballs" />
+  <rect onclick="incrementstrikesbot(); addpitchesbot();" x="255"
+			y="1250" width="176" height="265" fill="green" id="botgreenstrikes" />
  </g>
 </svg>
 	<br>
@@ -77,14 +87,20 @@ document.onmousemove = readMouseMove;
 
 	<script>
 		var delay = 500;
-		
+
 		function recall() {
-			document.getElementById('ballstop').value = localStorage.getItem("ballstop");
-			document.getElementById('ballsbot').value = localStorage.getItem("ballsbot");
-			document.getElementById('strikestop').value = localStorage.getItem("strikestop");
-			document.getElementById('strikesbot').value = localStorage.getItem("strikesbot");
-			document.getElementById('totaltop').value = localStorage.getItem("totaltop");
-			document.getElementById('totalbot').value = localStorage.getItem("totalbot");			
+			document.getElementById('ballstop').value = localStorage
+					.getItem("ballstop");
+			document.getElementById('ballsbot').value = localStorage
+					.getItem("ballsbot");
+			document.getElementById('strikestop').value = localStorage
+					.getItem("strikestop");
+			document.getElementById('strikesbot').value = localStorage
+					.getItem("strikesbot");
+			document.getElementById('totaltop').value = localStorage
+					.getItem("totaltop");
+			document.getElementById('totalbot').value = localStorage
+					.getItem("totalbot");
 		}
 
 		function addpitchestop() {
@@ -181,6 +197,8 @@ document.onmousemove = readMouseMove;
 	<br>
 	<br>
 	<br>
+	<h2 id="xb_result">0</h2>
+	<h2 id="yb_result">0</h2>
 	<h1>BOTTOM OF THE INNING</h1>
 </body>
 </html>
