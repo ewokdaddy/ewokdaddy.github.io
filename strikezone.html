@@ -18,7 +18,7 @@
 	background-color: yellow;
 }
 
-#newpitcherbuttontop, #newpitcherbuttonbot {
+#newpitcherbuttontop, #newpitcherbuttonbot, #recall {
 	font-size: 40px;
 	background-color: lightblue;
 }
@@ -29,14 +29,14 @@
 </style>
 </head>
 <body id="body">
-	<h1>TOP</h1>
+	<h1>TOP OF THE INNING</h1>
 	<b id="actiont"></b>
 	<input size="2" type="text" id="ballstop" value="0">
 	<input size="2" type="text" id='strikestop' value="0">
 	<input size="2" type="text" id="totaltop" value="0">
 	<br>
 	<button onclick="zero4newpitchertop();" id="newpitcherbuttontop">NEW
-		PITCHER</button>
+		PITCHER</button>&nbsp;&nbsp;
 	<button onclick="recall();" id="recall">RECALL</button>
 	<br>
 	<svg width="700" height="1400" xmlns="http://www.w3.org/2000/svg"
@@ -181,6 +181,6 @@
 	<br>
 	<br>
 	<br>
-	<h1>BOTTOM</h1>
+	<h1>BOTTOM OF THE INNING</h1>
 </body>
 </html>
