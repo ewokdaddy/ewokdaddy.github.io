@@ -7,120 +7,180 @@
 #body {
 	background-color: lightgreen;
 }
-#strikestop, #strikesbot, #strikestop, #ballstop, #ballsbot {
-font-size: 40px;
-background-color: lightyellow;
-}
- #totalbot, #totaltop {
- font-size: 40px;
- background-color: yellow;
- }
- #newpitcherbuttontop, #newpitcherbuttonbot {
- font-size: 40px;
- background-color: lightblue;
- }
- #actiont, #actionb {
- font-size: 40px;
- }
 
+#strikestop, #strikesbot, #strikestop, #ballstop, #ballsbot {
+	font-size: 40px;
+	background-color: lightyellow;
+}
+
+#totalbot, #totaltop {
+	font-size: 40px;
+	background-color: yellow;
+}
+
+#newpitcherbuttontop, #newpitcherbuttonbot {
+	font-size: 40px;
+	background-color: lightblue;
+}
+
+#actiont, #actionb {
+	font-size: 40px;
+}
 </style>
 </head>
 <body id="body">
-<h1>TOP</h1>
-<b id="actiont"></b>
-<input size="2" type="text" id="ballstop" value="0">
-<input size="2" type="text" id='strikestop' value="0">
-<input size="2" type="text" id="totaltop" value="0">
-<br>
-<button onclick="zero4newpitchertop();" id="newpitcherbuttontop">NEW PITCHER</button>
-		<br>
-	<svg width="700" height="1400" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+	<h1>TOP</h1>
+	<b id="actiont"></b>
+	<input size="2" type="text" id="ballstop" value="0">
+	<input size="2" type="text" id='strikestop' value="0">
+	<input size="2" type="text" id="totaltop" value="0">
+	<br>
+	<button onclick="zero4newpitchertop();" id="newpitcherbuttontop">NEW
+		PITCHER</button>
+	<button onclick="recall();" id="recall">RECALL</button>
+	<br>
+	<svg width="700" height="1400" xmlns="http://www.w3.org/2000/svg"
+		xmlns:svg="http://www.w3.org/2000/svg">
  <g>
   <title>Layer 1</title>
-  <rect onclick="incrementballstop(); addpitchestop();"  y="60" x="60" height="600" width="586" fill="red" id="topredballs"/>
-  <rect onclick="incrementstrikestop(); addpitchestop();"  x="255" y="210" width="181" height="285" fill="green" id="topgreenstrikes"/>
-  <rect onclick="incrementballsbot(); addpitchesbot();"  y="740" x="60" height="600" width="586" fill="red" id="botredballs"/>
-  <rect onclick="incrementstrikesbot(); addpitchesbot();"  x="255" y="915" width="176" height="265" fill="green" id="botgreenstrikes" />
+  <rect onclick="incrementballstop(); addpitchestop();" y="60" x="60"
+			height="600" width="586" fill="red" id="topredballs" />
+  <rect onclick="incrementstrikestop(); addpitchestop();" x="255"
+			y="210" width="181" height="285" fill="green" id="topgreenstrikes" />
+  <rect onclick="incrementballsbot(); addpitchesbot();" y="740" x="60"
+			height="600" width="586" fill="red" id="botredballs" />
+  <rect onclick="incrementstrikesbot(); addpitchesbot();" x="255"
+			y="915" width="176" height="265" fill="green" id="botgreenstrikes" />
  </g>
 </svg>
-<br>
-<b id="actionb"></b>
-<input size="3" type="text" id="ballsbot" value="0">
-<input size="3" type="text" id='strikesbot' value="0">
-<input size="3" type="text" id="totalbot" value="0">
-<br>
-<button onclick="zero4newpitcherbot();" id="newpitcherbuttonbot">NEW PITCHER</button>
+	<br>
+	<b id="actionb"></b>
+	<input size="3" type="text" id="ballsbot" value="0">
+	<input size="3" type="text" id='strikesbot' value="0">
+	<input size="3" type="text" id="totalbot" value="0">
+	<br>
+	<button onclick="zero4newpitcherbot();" id="newpitcherbuttonbot">NEW
+		PITCHER</button>
 
-<script>
-var delay = 500;
-function addpitchestop() {
-	var strikes = parseInt(document.getElementById('strikestop').value);
-	var balls = parseInt(document.getElementById('ballstop').value);
-	var pitches = strikes + balls;
-	document.getElementById('totaltop').value = pitches;
-}
-function addpitchesbot() {
-	var strikes = parseInt(document.getElementById('strikesbot').value);
-	var balls = parseInt(document.getElementById('ballsbot').value);
-	var pitches = strikes + balls;
-	document.getElementById('totalbot').value = pitches;
-}
-function incrementballstop() {
-	var pitch = parseInt(document.getElementById('ballstop').value);
-	pitch++;
-	document.getElementById('ballstop').value = pitch;
-	
-	document.getElementById("actiont").innerHTML = "BALL BALL BALL BALL";
-	setTimeout(function() {
-		document.getElementById("actiont").innerHTML = " ";
-	}, delay);
-	
-}
-function incrementstrikestop() {
-	var pitch = parseInt(document.getElementById('strikestop').value);
-	pitch++;
-	document.getElementById('strikestop').value = pitch;
-	
-	document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
-	setTimeout(function() {
-		document.getElementById("actiont").innerHTML = " ";
-	}, delay);
-}
-function incrementballsbot() {
-	var pitch = parseInt(document.getElementById('ballsbot').value);
-	pitch++;
-	document.getElementById('ballsbot').value = pitch;
-	
-	document.getElementById("actionb").innerHTML = "BALL BALL BALL BALL";
-	setTimeout(function() {
-		document.getElementById("actionb").innerHTML = " ";
-	}, delay);
-}
-function incrementstrikesbot() {
-	var pitch = parseInt(document.getElementById('strikesbot').value);
-	pitch++;
-	document.getElementById('strikesbot').value = pitch;
-	
-	document.getElementById("actionb").innerHTML = "STRIKE STRIKE STRIKE";
-	setTimeout(function() {
-		document.getElementById("actionb").innerHTML = " ";
-	}, delay);
-}
-function zero4newpitchertop() {
-	var pitch = 0;
-	document.getElementById('ballstop').value = pitch;
-	document.getElementById('strikestop').value = pitch;
-	document.getElementById('totaltop').value = pitch;
-}
-function zero4newpitcherbot() {
-	var pitch = 0;
-	document.getElementById('ballsbot').value = pitch;
-	document.getElementById('strikesbot').value = pitch;
-	document.getElementById('totalbot').value = pitch;
-	
-}
-</script>
-<br><br><br>
-<h1>BOTTOM</h1>
+	<script>
+		var delay = 500;
+		/* localStorage.setItem("ballstop", document
+				.getElementById('ballstop').value);
+		localStorage.setItem("strikestop", document
+				.getElementById('strikestop').value);
+		localStorage.setItem("ballsbot", document
+				.getElementById('ballsbot').value);
+		localStorage.setItem("strikesbot", document
+				.getElementById('strikesbot').value);
+		localStorage.setItem("totaltop", document
+				.getElementById('totaltop').value);
+		localStorage.setItem("totalbot", document
+				.getElementById('totalbot').value); */
+		
+		function recall() {
+			document.getElementById('ballstop').value = localStorage.getItem("ballstop");
+			document.getElementById('ballsbot').value = localStorage.getItem("ballsbot");
+			document.getElementById('strikestop').value = localStorage.getItem("strikestop");
+			document.getElementById('strikesbot').value = localStorage.getItem("strikesbot");
+			document.getElementById('totaltop').value = localStorage.getItem("totaltop");
+			document.getElementById('totalbot').value = localStorage.getItem("totalbot");
+			
+		}
+
+		function addpitchestop() {
+			var strikes = parseInt(document.getElementById('strikestop').value);
+			var balls = parseInt(document.getElementById('ballstop').value);
+			var pitches = strikes + balls;
+			document.getElementById('totaltop').value = pitches;
+			localStorage.setItem("totaltop", document
+					.getElementById('totaltop').value);
+		}
+		function addpitchesbot() {
+			var strikes = parseInt(document.getElementById('strikesbot').value);
+			var balls = parseInt(document.getElementById('ballsbot').value);
+			var pitches = strikes + balls;
+			document.getElementById('totalbot').value = pitches;
+			localStorage.setItem("totalbot", document
+					.getElementById('totalbot').value);
+		}
+		function incrementballstop() {
+			var pitch = parseInt(document.getElementById('ballstop').value);
+			pitch++;
+			document.getElementById('ballstop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "BALL BALL BALL BALL";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("ballstop", document
+					.getElementById('ballstop').value);
+
+		}
+		function incrementstrikestop() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
+			document.getElementById('strikestop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+		}
+		function incrementballsbot() {
+			var pitch = parseInt(document.getElementById('ballsbot').value);
+			pitch++;
+			document.getElementById('ballsbot').value = pitch;
+
+			document.getElementById("actionb").innerHTML = "BALL BALL BALL BALL";
+			setTimeout(function() {
+				document.getElementById("actionb").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("ballsbot", document
+					.getElementById('ballsbot').value);
+		}
+		function incrementstrikesbot() {
+			var pitch = parseInt(document.getElementById('strikesbot').value);
+			pitch++;
+			document.getElementById('strikesbot').value = pitch;
+
+			document.getElementById("actionb").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actionb").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikesbot", document
+					.getElementById('strikesbot').value);
+		}
+		function zero4newpitchertop() {
+			var pitch = 0;
+			document.getElementById('ballstop').value = pitch;
+			document.getElementById('strikestop').value = pitch;
+			document.getElementById('totaltop').value = pitch;
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+			localStorage.setItem("ballstop", document
+					.getElementById('ballstop').value);
+			localStorage.setItem("totaltop", document
+					.getElementById('totaltop').value);
+		}
+		function zero4newpitcherbot() {
+			var pitch = 0;
+			document.getElementById('ballsbot').value = pitch;
+			document.getElementById('strikesbot').value = pitch;
+			document.getElementById('totalbot').value = pitch;
+			localStorage.setItem("strikesbot", document
+					.getElementById('strikesbot').value);
+			localStorage.setItem("ballsbot", document
+					.getElementById('ballsbot').value);
+			localStorage.setItem("totalbot", document
+					.getElementById('totalbot').value);
+
+		}
+	</script>
+	<br>
+	<br>
+	<br>
+	<h1>BOTTOM</h1>
 </body>
 </html>
