@@ -8,6 +8,10 @@
 	background-color: lightgreen;
 }
 
+#sv_window {
+background-color: lightblue;
+}
+
 #strikestop, #strikesbot, #strikestop, #ballstop, #ballsbot {
 	font-size: 40px;
 	background-color: lightyellow;
@@ -27,9 +31,20 @@
 	font-size: 40px;
 }
 </style>
+<script>
+function readMouseMove(e) {
+	var result_x = document.getElementById('x_result');
+	var result_y = document.getElementById('y_result');
+	result_x.innerHTML = e.clientX;
+	result_y.innerHTML = e.clientY;
+}
+document.onmousemove = readMouseMove;
+</script>
 </head>
 <body id="body">
 	<h1>TOP OF THE INNING</h1>
+	<h2 id="x_result">0</h2>
+	<h2 id="y_result">0</h2>
 	<b id="actiont"></b>
 	<input size="2" type="text" id="ballstop" value="0">
 	<input size="2" type="text" id='strikestop' value="0">
@@ -39,7 +54,9 @@
 		PITCHER</button>&nbsp;&nbsp;
 	<button onclick="recall();" id="recall">RECALL</button>
 	<br>
-	<svg width="700" height="1800" xmlns="http://www.w3.org/2000/svg"
+	
+	
+	<svg id="sv_window" width="700" height="1800" xmlns="http://www.w3.org/2000/svg"
 		xmlns:svg="http://www.w3.org/2000/svg">
  <g>
   <title>BALLS AND STRIKES</title>
