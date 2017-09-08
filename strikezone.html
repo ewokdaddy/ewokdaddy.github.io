@@ -39,18 +39,14 @@
 		PITCHER</button>&nbsp;&nbsp;
 	<button onclick="recall();" id="recall">RECALL</button>
 	<br>
-	<svg width="700" height="1400" xmlns="http://www.w3.org/2000/svg"
+	<svg width="700" height="1800" xmlns="http://www.w3.org/2000/svg"
 		xmlns:svg="http://www.w3.org/2000/svg">
  <g>
-  <title>Layer 1</title>
-  <rect onclick="incrementballstop(); addpitchestop();" y="60" x="60"
-			height="600" width="586" fill="red" id="topredballs" />
-  <rect onclick="incrementstrikestop(); addpitchestop();" x="255"
-			y="210" width="181" height="285" fill="green" id="topgreenstrikes" />
-  <rect onclick="incrementballsbot(); addpitchesbot();" y="740" x="60"
-			height="600" width="586" fill="red" id="botredballs" />
-  <rect onclick="incrementstrikesbot(); addpitchesbot();" x="255"
-			y="915" width="176" height="265" fill="green" id="botgreenstrikes" />
+  <title>BALLS AND STRIKES</title>
+  <rect onclick="incrementballstop(); addpitchestop();" y="60" x="60" height="600" width="586" fill="red" id="topredballs" />
+  <rect onclick="incrementstrikestop(); addpitchestop();" x="255" y="210" width="181" height="285" fill="green" id="topgreenstrikes" />
+  <rect onclick="incrementballsbot(); addpitchesbot();" y="1090" x="60" height="600" width="586" fill="red" id="botredballs" />
+  <rect onclick="incrementstrikesbot(); addpitchesbot();" x="255" y="1250" width="176" height="265" fill="green" id="botgreenstrikes" />
  </g>
 </svg>
 	<br>
@@ -64,18 +60,6 @@
 
 	<script>
 		var delay = 500;
-		/* localStorage.setItem("ballstop", document
-				.getElementById('ballstop').value);
-		localStorage.setItem("strikestop", document
-				.getElementById('strikestop').value);
-		localStorage.setItem("ballsbot", document
-				.getElementById('ballsbot').value);
-		localStorage.setItem("strikesbot", document
-				.getElementById('strikesbot').value);
-		localStorage.setItem("totaltop", document
-				.getElementById('totaltop').value);
-		localStorage.setItem("totalbot", document
-				.getElementById('totalbot').value); */
 		
 		function recall() {
 			document.getElementById('ballstop').value = localStorage.getItem("ballstop");
@@ -83,8 +67,7 @@
 			document.getElementById('strikestop').value = localStorage.getItem("strikestop");
 			document.getElementById('strikesbot').value = localStorage.getItem("strikesbot");
 			document.getElementById('totaltop').value = localStorage.getItem("totaltop");
-			document.getElementById('totalbot').value = localStorage.getItem("totalbot");
-			
+			document.getElementById('totalbot').value = localStorage.getItem("totalbot");			
 		}
 
 		function addpitchestop() {
