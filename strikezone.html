@@ -18,11 +18,13 @@ font-size: 40px;
 font-size: 40px;
 }
 #ballstop, #ballsbot {
-	background-color: pink;
+	background-color: red;
+	color: white;
 }
 
 #strikestop, #strikesbot {
-	background-color: lightgreen;
+	background-color: green;
+	color: white;
 }
 
 #strikestop, #strikesbot, #strikestop, #ballstop, #ballsbot {
@@ -44,23 +46,23 @@ font-size: 40px;
 }
 </style>
 <script>
-	function readMouseMove(e) {
-		var result_x = document.getElementById('x_result');
-		var result_y = document.getElementById('y_result');
-		var result_xb = document.getElementById('xb_result');
-		var result_yb = document.getElementById('yb_result');
-		result_x.innerHTML = e.clientX;
-		result_y.innerHTML = e.clientY;
-		result_xb.innerHTML = e.clientX;
-		result_yb.innerHTML = e.clientY;
-	}
-	document.onmousemove = readMouseMove;
+	//function readMouseMove(e) {
+	//	var result_x = document.getElementById('x_result');
+	//	var result_y = document.getElementById('y_result');
+	//	var result_xb = document.getElementById('xb_result');
+	//	var result_yb = document.getElementById('yb_result');
+	//	result_x.innerHTML = e.clientX;
+	//	result_y.innerHTML = e.clientY;
+	//	result_xb.innerHTML = e.clientX;
+	//	result_yb.innerHTML = e.clientY;
+//	}
+//	document.onmousemove = readMouseMove;
 </script>
 </head>
 <body id="body">
 	<h1>TOP OF THE INNING</h1>
-	<h2 id="x_result">0</h2>
-	<h2 id="y_result">0</h2>
+	<!-- <h2 id="x_result">0</h2>
+	<h2 id="y_result">0</h2> -->
 	<b id="actiont"></b>
 	<input id="ballstop" size="3" type="text" id="ballstop" value="0">
 	<input id="strikestop" size="3" type="text" id='strikestop' value="0">
@@ -151,12 +153,14 @@ font-size: 40px;
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
 			document.getElementById('top1').value = pitchestop;
 			document.getElementById('top1').style.backgroundColor = "aqua";
+			localStorage.setItem("top1", document.getElementById('top1').value);
 		}		
 		function pitchesTop2() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
 			var pitches1st = parseInt(document.getElementById('top1').value);
 			document.getElementById('top2').value = pitchestop - pitches1st;
 			document.getElementById('top2').style.backgroundColor = "aqua";
+			localStorage.setItem("top2", document.getElementById('top2').value);
 		}
 		function pitchesTop3() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -164,6 +168,7 @@ font-size: 40px;
 			var pitches2nd = parseInt(document.getElementById('top2').value);
 			document.getElementById('top3').value = pitchestop - pitches1st - pitches2nd;
 			document.getElementById('top3').style.backgroundColor = "aqua";
+			localStorage.setItem("top3", document.getElementById('top3').value);
 		}
 		function pitchesTop4() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -172,6 +177,7 @@ font-size: 40px;
 			var pitches3rd = parseInt(document.getElementById('top3').value);
 			document.getElementById('top4').value = pitchestop - pitches1st - pitches2nd - pitches3rd;
 			document.getElementById('top4').style.backgroundColor = "aqua";
+			localStorage.setItem("top4", document.getElementById('top4').value);
 		}
 		function pitchesTop5() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -181,6 +187,7 @@ font-size: 40px;
 			var pitches4th = parseInt(document.getElementById('top4').value);
 			document.getElementById('top5').value = pitchestop - pitches1st - pitches2nd - pitches3rd - pitches4th;
 			document.getElementById('top5').style.backgroundColor = "aqua";
+			localStorage.setItem("top5", document.getElementById('top5').value);
 		}
 		function pitchesTop6() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -192,6 +199,7 @@ font-size: 40px;
 			document.getElementById('top6').value = pitchestop - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th;
 			document.getElementById('top6').style.backgroundColor = "aqua";
+			localStorage.setItem("top6", document.getElementById('top6').value);
 		}
 		function pitchesTop7() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -204,6 +212,7 @@ font-size: 40px;
 			document.getElementById('top7').value = pitchestop - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th;
 			document.getElementById('top7').style.backgroundColor = "aqua";
+			localStorage.setItem("top7", document.getElementById('top7').value);
 		}
 		function pitchesTop8() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -217,6 +226,7 @@ font-size: 40px;
 			document.getElementById('top8').value = pitchestop - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th;
 			document.getElementById('top8').style.backgroundColor = "aqua";
+			localStorage.setItem("top8", document.getElementById('top8').value);
 		}
 		function pitchesTop9() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -231,18 +241,21 @@ font-size: 40px;
 			document.getElementById('top9').value = pitchestop - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th - pitches8th;
 			document.getElementById('top9').style.backgroundColor = "aqua";
+			localStorage.setItem("top9", document.getElementById('top9').value);
 		}
 		
 		function pitchesBot1() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
 			document.getElementById('bot1').value = pitchesbot;
 			document.getElementById('bot1').style.backgroundColor = "aqua";
+			localStorage.setItem("bot1", document.getElementById('bot1').value);
 		}
 		function pitchesBot2() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
 			var pitches1st = parseInt(document.getElementById('bot1').value);
 			document.getElementById('bot2').value = pitchesbot - pitches1st;
 			document.getElementById('bot2').style.backgroundColor = "aqua";
+			localStorage.setItem("bot2", document.getElementById('bot2').value);
 		}
 		function pitchesBot3() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
@@ -250,6 +263,7 @@ font-size: 40px;
 			var pitches2nd = parseInt(document.getElementById('bot2').value);
 			document.getElementById('bot3').value = pitchesbot - pitches1st - pitches2nd;
 			document.getElementById('bot3').style.backgroundColor = "aqua";
+			localStorage.setItem("bot3", document.getElementById('bot3').value);
 		}
 		function pitchesBot4() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
@@ -258,6 +272,7 @@ font-size: 40px;
 			var pitches3rd = parseInt(document.getElementById('bot3').value);
 			document.getElementById('bot4').value = pitchesbot - pitches1st - pitches2nd - pitches3rd;
 			document.getElementById('bot4').style.backgroundColor = "aqua";
+			localStorage.setItem("bot4", document.getElementById('bot4').value);
 		}
 		function pitchesBot5() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
@@ -267,6 +282,7 @@ font-size: 40px;
 			var pitches4th = parseInt(document.getElementById('bot4').value);
 			document.getElementById('bot5').value = pitchesbot - pitches1st - pitches2nd - pitches3rd - pitches4th;
 			document.getElementById('bot5').style.backgroundColor = "aqua";
+			localStorage.setItem("bot5", document.getElementById('bot5').value);
 		}
 		function pitchesBot6() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
@@ -278,6 +294,7 @@ font-size: 40px;
 			document.getElementById('bot6').value = pitchesbot - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th;
 			document.getElementById('bot6').style.backgroundColor = "aqua";
+			localStorage.setItem("bot6", document.getElementById('bot6').value);
 		}
 		function pitchesBot7() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
@@ -290,6 +307,7 @@ font-size: 40px;
 			document.getElementById('bot7').value = pitchesbot - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th;
 			document.getElementById('bot7').style.backgroundColor = "aqua";
+			localStorage.setItem("bot7", document.getElementById('bot7').value);
 		}
 		function pitchesBot8() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
@@ -303,6 +321,7 @@ font-size: 40px;
 			document.getElementById('bot8').value = pitchesbot - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th;
 			document.getElementById('bot8').style.backgroundColor = "aqua";
+			localStorage.setItem("bot8", document.getElementById('bot8').value);
 		}
 		function pitchesBot9() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
@@ -317,6 +336,7 @@ font-size: 40px;
 			document.getElementById('bot9').value = pitchesbot - pitches1st - 
 			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th - pitches8th;
 			document.getElementById('bot9').style.backgroundColor = "aqua";
+			localStorage.setItem("bot9", document.getElementById('bot9').value);
 		}
 		
 
@@ -333,6 +353,44 @@ font-size: 40px;
 					.getItem("totaltop");
 			document.getElementById('totalbot').value = localStorage
 					.getItem("totalbot");
+			document.getElementById('top1').value = localStorage
+			.getItem("top1");
+			document.getElementById('top2').value = localStorage
+			.getItem("top2");
+			document.getElementById('top3').value = localStorage
+			.getItem("top3");
+			document.getElementById('top4').value = localStorage
+			.getItem("top4");
+			document.getElementById('top5').value = localStorage
+			.getItem("top5");
+			document.getElementById('top6').value = localStorage
+			.getItem("top6");
+			document.getElementById('top7').value = localStorage
+			.getItem("top7");
+			document.getElementById('top8').value = localStorage
+			.getItem("top8");
+			document.getElementById('top9').value = localStorage
+			.getItem("top9");
+			document.getElementById('bot1').value = localStorage
+			.getItem("bot1");
+			document.getElementById('bot2').value = localStorage
+			.getItem("bot2");
+			document.getElementById('bot3').value = localStorage
+			.getItem("bot3");
+			document.getElementById('bot4').value = localStorage
+			.getItem("bot4");
+			document.getElementById('bot5').value = localStorage
+			.getItem("bot5");
+			document.getElementById('bot6').value = localStorage
+			.getItem("bot6");
+			document.getElementById('bot7').value = localStorage
+			.getItem("bot7");
+			document.getElementById('bot8').value = localStorage
+			.getItem("bot8");
+			document.getEementById('bot9').value = localStorage
+			.getItem("bot9");
+			
+			
 		}
 
 		function addpitchestop() {
@@ -429,8 +487,8 @@ font-size: 40px;
 	<br>
 	<br>
 	<br>
-	<h2 id="xb_result">0</h2>
-	<h2 id="yb_result">0</h2>
+	<!-- <h2 id="xb_result">0</h2>
+	<h2 id="yb_result">0</h2> -->
 	<h1>BOTTOM OF THE INNING</h1>
 </body>
 </html>
