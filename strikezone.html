@@ -9,7 +9,7 @@
 }
 
 #sv_window {
-	//background-color: lightblue;
+	background-color: lightblue;
 }
 #top1, #top2, #top3, #top4, #top5, #top6, #top7, #top8, #top9 {
 font-size: 40px;
@@ -109,15 +109,18 @@ font-size: 40px;
  <g>
   <title>BALLS AND STRIKES</title>
   <rect onclick="incrementballstop(); addpitchestop();" y="60" x="60"
-			height="600" width="586" fill="red" id="topredballs" />
+			height="900" width="586" fill="red" id="topredballs" />
   <rect onclick="incrementstrikestop(); addpitchestop();" x="255"
 			y="210" width="181" height="285" fill="green" id="topgreenstrikes" />
+			
   <rect onclick="incrementballsbot(); addpitchesbot();" y="1090" x="60"
-			height="600" width="586" fill="red" id="botredballs" />
+			height="900" width="586" fill="red" id="botredballs" />
   <rect onclick="incrementstrikesbot(); addpitchesbot();" x="255"
 			y="1250" width="176" height="265" fill="green" id="botgreenstrikes" />
  </g>
 </svg>
+
+
 	<br>
 	<b id="actionb"></b>
 	<input size="3" type="text" id="ballsbot" value="0">
