@@ -9,14 +9,17 @@
 }
 
 #sv_window {
-	 background-color: lightblue; 
+	background-color: lightblue;
 }
+
 #top1, #top2, #top3, #top4, #top5, #top6, #top7, #top8, #top9 {
-font-size: 40px;
+	font-size: 40px;
 }
+
 #bot1, #bot2, #bot3, #bot4, #bot5, #bot6, #bot7, #bot8, #bot9 {
-font-size: 40px;
+	font-size: 40px;
 }
+
 #ballstop, #ballsbot {
 	background-color: red;
 	color: white;
@@ -55,8 +58,8 @@ font-size: 40px;
 	//	result_y.innerHTML = e.clientY;
 	//	result_xb.innerHTML = e.clientX;
 	//	result_yb.innerHTML = e.clientY;
-//	}
-//	document.onmousemove = readMouseMove;
+	//	}
+	//	document.onmousemove = readMouseMove;
 </script>
 </head>
 <body id="body">
@@ -76,16 +79,16 @@ font-size: 40px;
 	<input size="3" type="text" id="top3" placeholder="3T"
 		onclick="pitchesTop3();" readonly value="">
 	<input size="3" type="text" id="top4" placeholder="4T"
-		onclick="pitchesTop4();" readonly value="" >
+		onclick="pitchesTop4();" readonly value="">
 	<input size="3" type="text" id="top5" placeholder="5T"
 		onclick="pitchesTop5();" readonly value="">
 	<input size="3" type="text" id="top6" placeholder="6T"
 		onclick="pitchesTop6();" readonly value="">
-		<br>
+	<br>
 	<input size="3" type="text" id="top7" placeholder="7T"
-		onclick="pitchesTop7();" readonly value="">		
+		onclick="pitchesTop7();" readonly value="">
 	<input size="3" type="text" id="top8" placeholder="8T"
-		onclick="pitchesTop8();" readonly value="">		
+		onclick="pitchesTop8();" readonly value="">
 	<input size="3" type="text" id="top9" placeholder="9T"
 		onclick="pitchesTop9();" readonly value="">
 
@@ -102,26 +105,40 @@ font-size: 40px;
 	<button onclick="recall();" id="recallt">RECALL</button>
 	<br>
 
-<svg id="sv_window" width="1000" height="2100"
-	<!-- <svg id="sv_window" width="700" height="2100" -->
+	<svg id="sv_window" width="1000" height="2100"
+		<!-- <svg id="sv_window" width="700" height="2100" -->
 		xmlns="http://www.w3.org/2000/svg"
 		xmlns:svg="http://www.w3.org/2000/svg">
  <g>
   <title>BALLS AND STRIKES</title>
   
-  <rect id="lefty" onclick="lefty();" x="15" y="360" width="150" height="285" fill="yellow" ></rect>
+  <rect id="leftytop" onclick="leftytop();" x="15" y="360" width="150"
+			height="285" fill="yellow"></rect>
   
-  <rect id="topredballs" onclick="incrementballstop(); addpitchestop();" x="190" y="60"
-			width="586" height="900" fill="red" ></rect>
+  <rect id="topredballs" onclick="incrementballstop(); addpitchestop();"
+			x="190" y="60" width="586" height="900" fill="red"></rect>
 			
-  <rect id="topgreenstrikes" onclick="incrementstrikestop(); addpitchestop();" x="390" y="360" 
-			width="210" height="285" fill="green"  ></rect>
+  <rect id="topgreenstrikes"
+			onclick="incrementstrikestop(); addpitchestop();" x="390" y="360"
+			width="210" height="285" fill="green"></rect>
 			
-  <rect id="botredballs" onclick="incrementballsbot(); addpitchesbot();"  x="190" y="1190"
-			width="586" height="900" fill="red" ></rect>
+  <rect id="rightytop" onclick="rightytop();" x="815" y="360"
+			width="150" height="285" fill="yellow"></rect>
+  
+  
+  <rect id="leftybot" onclick="leftybot();" x="15" y="1500" width="150"
+			height="285" fill="yellow"></rect>
+  
 			
-  <rect id="botgreenstrikes" onclick="incrementstrikesbot(); addpitchesbot();" x="390" y="1500" 
-  			width="210" height="285" fill="green"  ></rect>
+  <rect id="botredballs" onclick="incrementballsbot(); addpitchesbot();"
+			x="190" y="1190" width="586" height="900" fill="red"></rect>
+			
+  <rect id="botgreenstrikes"
+			onclick="incrementstrikesbot(); addpitchesbot();" x="390" y="1500"
+			width="210" height="285" fill="green"></rect>
+  			
+  <rect id="rightybot" onclick="rightybot();" x="815" y="1500"
+			width="150" height="285" fill="yellow"></rect>
  </g>
 </svg>
 
@@ -132,16 +149,25 @@ font-size: 40px;
 	<input size="3" type="text" id='strikesbot' value="0">
 	<input size="3" type="text" id="totalbot" value="0">
 	<br>
-	<input size="3" type="text" id="bot1" placeholder="1B" onclick="pitchesBot1();" readonly value="">
-	<input size="3" type="text" id="bot2" placeholder="2B" onclick="pitchesBot2();" readonly value="">
-	<input size="3" type="text" id="bot3" placeholder="3B" onclick="pitchesBot3();" readonly value="">
-	<input size="3" type="text" id="bot4" placeholder="4B" onclick="pitchesBot4();" readonly value="">
-	<input size="3" type="text" id="bot5" placeholder="5B" onclick="pitchesBot5();" readonly value="">
-	<input size="3" type="text" id="bot6" placeholder="6B" onclick="pitchesBot6();" readonly value="">
+	<input size="3" type="text" id="bot1" placeholder="1B"
+		onclick="pitchesBot1();" readonly value="">
+	<input size="3" type="text" id="bot2" placeholder="2B"
+		onclick="pitchesBot2();" readonly value="">
+	<input size="3" type="text" id="bot3" placeholder="3B"
+		onclick="pitchesBot3();" readonly value="">
+	<input size="3" type="text" id="bot4" placeholder="4B"
+		onclick="pitchesBot4();" readonly value="">
+	<input size="3" type="text" id="bot5" placeholder="5B"
+		onclick="pitchesBot5();" readonly value="">
+	<input size="3" type="text" id="bot6" placeholder="6B"
+		onclick="pitchesBot6();" readonly value="">
 	<br>
-	<input size="3" type="text" id="bot7" placeholder="7B" onclick="pitchesBot7();" readonly value="">
-	<input size="3" type="text" id="bot8" placeholder="8B" onclick="pitchesBot8();" readonly value="">
-	<input size="3" type="text" id="bot9" placeholder="9B" onclick="pitchesBot9();" readonly value="">
+	<input size="3" type="text" id="bot7" placeholder="7B"
+		onclick="pitchesBot7();" readonly value="">
+	<input size="3" type="text" id="bot8" placeholder="8B"
+		onclick="pitchesBot8();" readonly value="">
+	<input size="3" type="text" id="bot9" placeholder="9B"
+		onclick="pitchesBot9();" readonly value="">
 	<br>
 	<button onclick="zero4newpitcherbot();" id="newpitcherbuttonbot">NEW
 		PITCHER</button>
@@ -164,7 +190,7 @@ font-size: 40px;
 			document.getElementById('top1').value = pitchestop;
 			document.getElementById('top1').style.backgroundColor = "aqua";
 			localStorage.setItem("top1", document.getElementById('top1').value);
-		}		
+		}
 		function pitchesTop2() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
 			var pitches1st = parseInt(document.getElementById('top1').value);
@@ -176,7 +202,8 @@ font-size: 40px;
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
 			var pitches1st = parseInt(document.getElementById('top1').value);
 			var pitches2nd = parseInt(document.getElementById('top2').value);
-			document.getElementById('top3').value = pitchestop - pitches1st - pitches2nd;
+			document.getElementById('top3').value = pitchestop - pitches1st
+					- pitches2nd;
 			document.getElementById('top3').style.backgroundColor = "aqua";
 			localStorage.setItem("top3", document.getElementById('top3').value);
 		}
@@ -185,7 +212,8 @@ font-size: 40px;
 			var pitches1st = parseInt(document.getElementById('top1').value);
 			var pitches2nd = parseInt(document.getElementById('top2').value);
 			var pitches3rd = parseInt(document.getElementById('top3').value);
-			document.getElementById('top4').value = pitchestop - pitches1st - pitches2nd - pitches3rd;
+			document.getElementById('top4').value = pitchestop - pitches1st
+					- pitches2nd - pitches3rd;
 			document.getElementById('top4').style.backgroundColor = "aqua";
 			localStorage.setItem("top4", document.getElementById('top4').value);
 		}
@@ -195,7 +223,8 @@ font-size: 40px;
 			var pitches2nd = parseInt(document.getElementById('top2').value);
 			var pitches3rd = parseInt(document.getElementById('top3').value);
 			var pitches4th = parseInt(document.getElementById('top4').value);
-			document.getElementById('top5').value = pitchestop - pitches1st - pitches2nd - pitches3rd - pitches4th;
+			document.getElementById('top5').value = pitchestop - pitches1st
+					- pitches2nd - pitches3rd - pitches4th;
 			document.getElementById('top5').style.backgroundColor = "aqua";
 			localStorage.setItem("top5", document.getElementById('top5').value);
 		}
@@ -206,8 +235,8 @@ font-size: 40px;
 			var pitches3rd = parseInt(document.getElementById('top3').value);
 			var pitches4th = parseInt(document.getElementById('top4').value);
 			var pitches5th = parseInt(document.getElementById('top5').value);
-			document.getElementById('top6').value = pitchestop - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th;
+			document.getElementById('top6').value = pitchestop - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th;
 			document.getElementById('top6').style.backgroundColor = "aqua";
 			localStorage.setItem("top6", document.getElementById('top6').value);
 		}
@@ -219,8 +248,9 @@ font-size: 40px;
 			var pitches4th = parseInt(document.getElementById('top4').value);
 			var pitches5th = parseInt(document.getElementById('top5').value);
 			var pitches6th = parseInt(document.getElementById('top6').value);
-			document.getElementById('top7').value = pitchestop - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th;
+			document.getElementById('top7').value = pitchestop - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th
+					- pitches6th;
 			document.getElementById('top7').style.backgroundColor = "aqua";
 			localStorage.setItem("top7", document.getElementById('top7').value);
 		}
@@ -233,8 +263,9 @@ font-size: 40px;
 			var pitches5th = parseInt(document.getElementById('top5').value);
 			var pitches6th = parseInt(document.getElementById('top6').value);
 			var pitches7th = parseInt(document.getElementById('top7').value);
-			document.getElementById('top8').value = pitchestop - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th;
+			document.getElementById('top8').value = pitchestop - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th
+					- pitches6th - pitches7th;
 			document.getElementById('top8').style.backgroundColor = "aqua";
 			localStorage.setItem("top8", document.getElementById('top8').value);
 		}
@@ -248,12 +279,13 @@ font-size: 40px;
 			var pitches6th = parseInt(document.getElementById('top6').value);
 			var pitches7th = parseInt(document.getElementById('top7').value);
 			var pitches8th = parseInt(document.getElementById('top8').value);
-			document.getElementById('top9').value = pitchestop - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th - pitches8th;
+			document.getElementById('top9').value = pitchestop - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th
+					- pitches6th - pitches7th - pitches8th;
 			document.getElementById('top9').style.backgroundColor = "aqua";
 			localStorage.setItem("top9", document.getElementById('top9').value);
 		}
-		
+
 		function pitchesBot1() {
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
 			document.getElementById('bot1').value = pitchesbot;
@@ -271,7 +303,8 @@ font-size: 40px;
 			var pitchesbot = parseInt(document.getElementById('totalbot').value);
 			var pitches1st = parseInt(document.getElementById('bot1').value);
 			var pitches2nd = parseInt(document.getElementById('bot2').value);
-			document.getElementById('bot3').value = pitchesbot - pitches1st - pitches2nd;
+			document.getElementById('bot3').value = pitchesbot - pitches1st
+					- pitches2nd;
 			document.getElementById('bot3').style.backgroundColor = "aqua";
 			localStorage.setItem("bot3", document.getElementById('bot3').value);
 		}
@@ -280,7 +313,8 @@ font-size: 40px;
 			var pitches1st = parseInt(document.getElementById('bot1').value);
 			var pitches2nd = parseInt(document.getElementById('bot2').value);
 			var pitches3rd = parseInt(document.getElementById('bot3').value);
-			document.getElementById('bot4').value = pitchesbot - pitches1st - pitches2nd - pitches3rd;
+			document.getElementById('bot4').value = pitchesbot - pitches1st
+					- pitches2nd - pitches3rd;
 			document.getElementById('bot4').style.backgroundColor = "aqua";
 			localStorage.setItem("bot4", document.getElementById('bot4').value);
 		}
@@ -290,7 +324,8 @@ font-size: 40px;
 			var pitches2nd = parseInt(document.getElementById('bot2').value);
 			var pitches3rd = parseInt(document.getElementById('bot3').value);
 			var pitches4th = parseInt(document.getElementById('bot4').value);
-			document.getElementById('bot5').value = pitchesbot - pitches1st - pitches2nd - pitches3rd - pitches4th;
+			document.getElementById('bot5').value = pitchesbot - pitches1st
+					- pitches2nd - pitches3rd - pitches4th;
 			document.getElementById('bot5').style.backgroundColor = "aqua";
 			localStorage.setItem("bot5", document.getElementById('bot5').value);
 		}
@@ -301,8 +336,8 @@ font-size: 40px;
 			var pitches3rd = parseInt(document.getElementById('bot3').value);
 			var pitches4th = parseInt(document.getElementById('bot4').value);
 			var pitches5th = parseInt(document.getElementById('bot5').value);
-			document.getElementById('bot6').value = pitchesbot - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th;
+			document.getElementById('bot6').value = pitchesbot - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th;
 			document.getElementById('bot6').style.backgroundColor = "aqua";
 			localStorage.setItem("bot6", document.getElementById('bot6').value);
 		}
@@ -314,8 +349,9 @@ font-size: 40px;
 			var pitches4th = parseInt(document.getElementById('bot4').value);
 			var pitches5th = parseInt(document.getElementById('bot5').value);
 			var pitches6th = parseInt(document.getElementById('bot6').value);
-			document.getElementById('bot7').value = pitchesbot - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th;
+			document.getElementById('bot7').value = pitchesbot - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th
+					- pitches6th;
 			document.getElementById('bot7').style.backgroundColor = "aqua";
 			localStorage.setItem("bot7", document.getElementById('bot7').value);
 		}
@@ -328,8 +364,9 @@ font-size: 40px;
 			var pitches5th = parseInt(document.getElementById('bot5').value);
 			var pitches6th = parseInt(document.getElementById('bot6').value);
 			var pitches7th = parseInt(document.getElementById('bot7').value);
-			document.getElementById('bot8').value = pitchesbot - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th;
+			document.getElementById('bot8').value = pitchesbot - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th
+					- pitches6th - pitches7th;
 			document.getElementById('bot8').style.backgroundColor = "aqua";
 			localStorage.setItem("bot8", document.getElementById('bot8').value);
 		}
@@ -343,12 +380,12 @@ font-size: 40px;
 			var pitches6th = parseInt(document.getElementById('bot6').value);
 			var pitches7th = parseInt(document.getElementById('bot7').value);
 			var pitches8th = parseInt(document.getElementById('bot8').value);
-			document.getElementById('bot9').value = pitchesbot - pitches1st - 
-			pitches2nd - pitches3rd - pitches4th - pitches5th - pitches6th - pitches7th - pitches8th;
+			document.getElementById('bot9').value = pitchesbot - pitches1st
+					- pitches2nd - pitches3rd - pitches4th - pitches5th
+					- pitches6th - pitches7th - pitches8th;
 			document.getElementById('bot9').style.backgroundColor = "aqua";
 			localStorage.setItem("bot9", document.getElementById('bot9').value);
 		}
-		
 
 		function recall() {
 			document.getElementById('ballstop').value = localStorage
@@ -364,43 +401,42 @@ font-size: 40px;
 			document.getElementById('totalbot').value = localStorage
 					.getItem("totalbot");
 			document.getElementById('top1').value = localStorage
-			.getItem("top1");
+					.getItem("top1");
 			document.getElementById('top2').value = localStorage
-			.getItem("top2");
+					.getItem("top2");
 			document.getElementById('top3').value = localStorage
-			.getItem("top3");
+					.getItem("top3");
 			document.getElementById('top4').value = localStorage
-			.getItem("top4");
+					.getItem("top4");
 			document.getElementById('top5').value = localStorage
-			.getItem("top5");
+					.getItem("top5");
 			document.getElementById('top6').value = localStorage
-			.getItem("top6");
+					.getItem("top6");
 			document.getElementById('top7').value = localStorage
-			.getItem("top7");
+					.getItem("top7");
 			document.getElementById('top8').value = localStorage
-			.getItem("top8");
+					.getItem("top8");
 			document.getElementById('top9').value = localStorage
-			.getItem("top9");
+					.getItem("top9");
 			document.getElementById('bot1').value = localStorage
-			.getItem("bot1");
+					.getItem("bot1");
 			document.getElementById('bot2').value = localStorage
-			.getItem("bot2");
+					.getItem("bot2");
 			document.getElementById('bot3').value = localStorage
-			.getItem("bot3");
+					.getItem("bot3");
 			document.getElementById('bot4').value = localStorage
-			.getItem("bot4");
+					.getItem("bot4");
 			document.getElementById('bot5').value = localStorage
-			.getItem("bot5");
+					.getItem("bot5");
 			document.getElementById('bot6').value = localStorage
-			.getItem("bot6");
+					.getItem("bot6");
 			document.getElementById('bot7').value = localStorage
-			.getItem("bot7");
+					.getItem("bot7");
 			document.getElementById('bot8').value = localStorage
-			.getItem("bot8");
+					.getItem("bot8");
 			document.getElementById('bot9').value = localStorage
-			.getItem("bot9");
-			
-			
+					.getItem("bot9");
+
 		}
 
 		function addpitchestop() {
