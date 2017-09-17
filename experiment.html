@@ -2,60 +2,94 @@
 <html>
 <head>
 <style type="text/css">
-#svg {
+#svg1, #svg2, #svg3 {
 	background-color: lightblue;
 }
+
 </style>
 <meta charset="UTF-8">
 <title>Drawing</title>
 </head>
 <body>
 
-	<svg id="svg" width="400" height="400" viewBox="0, 0, 400, 400">
-  
+
+	
+	<svg id="svg4" width="40" height="50" style="background-color:#bff;">
+	
+    <rect x="0" y="0" width="10" height="10" transform="translate(30,40)" </rect>
+    
+    </svg>
+	<br>
+	
+	<svg id="svg1" width="300" height="200" viewBox="0,0,300,200">
+	
+	 <text x="0" y="12">0,0</text>
+	 <circle cx="0" cy="0" r="3" fill="green"></circle>
+	
+  <!-- A rx ry, x-axis-rotation, large-arc-flag, sweep-flag, x ending point y ending point -->
+  <!-- 	 45 45       0                  0             0           125              125-->
+   
+           <circle cx="80" cy="80" r="3" fill="red"></circle> <!-- move to -->
+           <circle cx="200" cy="80" r="3" fill="green"></circle> <!-- radius x,y (80+45, 80+45) -->
+           <circle cx="125" cy="125" r="3" fill="blue"></circle> <!-- end x,y -->
            
-              <line  x1="10" y1="10" x2="400" y2="10" stroke="green" ></line> <!-- horizontal line at top -->
-         
-       <line x1="200" y1="10"  x2="200" y2="300" stroke="blue" >
-       
-       <animate attributeType="XML" attributeName="y1" from="0" to="400"
-        dur="5s" repeatCount="indefinite"/>
-        </line>
-       
-        
-       
-       <circle cx="200" cy="300" r="20" fill="green" ></circle>
-       
-       
-       
-      
-       
-      
-       
-       
-      
-       
-           
+          <path d="M80 80
+           A 45 45, 0, 0, 0, 125 125
+           L 200 80 Z" stroke="yellow" fill="transparent"</path>  
+          
 </svg>
 
-
-
-
-
+<br>
+	<svg id="svg2" width="400" height="400" viewBox="0,0,400,400"> 
+	
+	  
+ <path
+ d="
+M20 20 L 400 20 M200 20 L 200 300 
+M200 300 C 180 300, 180 330, 200 330 
+M200 300 C 220 300, 220 330, 200 330 
+" stroke-width="1" stroke="green"
+		fill="transparent"> 
+</path> 
+ 
+  <circle cx="200" cy="300" r="3" fill="black"></circle>  
+ <circle cx="180" cy="300" r="3" fill="red"></circle>  
+ <circle cx="180" cy="330" r="3" fill="green"></circle>       
+  <circle cx="200" cy="330" r="3" fill="blue"></circle> 
+  <circle cx="220" cy="300" r="3" fill="yellow"></circle>  
+  <circle cx="220" cy="330" r="3" fill="orange"></circle>  
+	
+	</svg>
+	<br>
 	<h2 id="x_result">0</h2>
 	<h2 id="y_result">0</h2>
+	<br>
+	<svg id="svg3" width="400" height="400" >
+
+ 
+
+ 
+<circle id="ball" cx="200" cy="300" r="30" fill="yellow" stroke="yellow" >
+<animate attributeType="XML" attributeName="r" from="0" to="20"
+        dur="1s" repeatCount="indefinite"/></animate>
+</circle>	
+	
+	</svg>
+	<br>
+	
+	
+	
+	
 	<script>
 		function readMouseMove(e) {
 			var result_x = document.getElementById('x_result');
-
 			var result_y = document.getElementById('y_result');
-
 			result_x.innerHTML = e.clientX;
 			result_y.innerHTML = e.clientY;
-
 		}
 		document.onmousemove = readMouseMove;
 	</script>
+	
 </body>
 </html>
 
