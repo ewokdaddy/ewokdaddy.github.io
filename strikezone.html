@@ -108,17 +108,20 @@ font-size: 40px;
 		xmlns:svg="http://www.w3.org/2000/svg">
  <g>
   <title>BALLS AND STRIKES</title>
-  <rect onclick="incrementballstop(); addpitchestop();" x="190" y="60"
-			width="586" height="900" fill="red" id="topredballs" />
+  
+  <rect id="lefty" onclick="lefty();" x="5" y="400" width="100" height="100" fill="yellow" ></rect>
+  
+  <rect id="topredballs" onclick="incrementballstop(); addpitchestop();" x="190" y="60"
+			width="586" height="900" fill="red" ></rect>
 			
-  <rect onclick="incrementstrikestop(); addpitchestop();" x="390" y="360" 
-			width="210" height="285" fill="green" id="topgreenstrikes" />
+  <rect id="topgreenstrikes" onclick="incrementstrikestop(); addpitchestop();" x="390" y="360" 
+			width="210" height="285" fill="green"  ></rect>
 			
-  <rect onclick="incrementballsbot(); addpitchesbot();"  x="190" y="1190"
-			width="586" height="900" fill="red" id="botredballs" />
+  <rect id="botredballs" onclick="incrementballsbot(); addpitchesbot();"  x="190" y="1190"
+			width="586" height="900" fill="red" ></rect>
 			
-  <rect onclick="incrementstrikesbot(); addpitchesbot();" x="390" y="1500" 
-  			width="210" height="285" fill="green" id="botgreenstrikes" />
+  <rect id="botgreenstrikes" onclick="incrementstrikesbot(); addpitchesbot();" x="390" y="1500" 
+  			width="210" height="285" fill="green"  ></rect>
  </g>
 </svg>
 
