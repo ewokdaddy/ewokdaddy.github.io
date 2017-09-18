@@ -71,6 +71,15 @@
 	<input id="ballstop" size="3" type="text" id="ballstop" value="0">
 	<input id="strikestop" size="3" type="text" id='strikestop' value="0">
 	<input id="totaltop" size="3" type="text" id="totaltop" value="0">
+	<table>
+	<tr> <td>1<td>2<td>3
+	<tr></tr>
+	<tr> <td>4<td>5<td>6
+	<tr></tr>
+	<tr> <td>7<td>8<td>9
+	<tr></tr>
+	</table>
+	
 	<br>
 
 	<input size="3" type="text" id="top1" placeholder="1T"
@@ -141,8 +150,11 @@
   <rect id="rightybot" onclick="rightybot();" x="815" y="1500"
 			width="150" height="285" fill="yellow"></rect>
 			
+			
+			
 			<rect id="at" onclick="incrementballstop();" 
 			x="190" y="60" width="200" height="300" fill="transparent" stroke="black" stroke-width="1" ></rect>
+			
 			<rect id="bt" onclick="incrementballstop();"
 			x="390" y="60" width="210" height="300" fill="transparent" stroke="black" stroke-width="1" ></rect>
 			<rect id="ct" onclick="incrementballstop();" 
@@ -202,6 +214,7 @@
 
 	<script>
 		var delay = 500;
+		var ballsA = 10;
 
 		function pitchesTop1() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
