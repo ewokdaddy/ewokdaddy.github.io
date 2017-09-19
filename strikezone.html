@@ -78,19 +78,19 @@
 	<input id="totaltop" size="3" type="text" id="totaltop" value="0">
 	<table id="table1">
 		<tr>
-			<td><input id="a" size="2" type="text" value="0">
-			<td><input id="b" size="2" type="text" value="0">
-			<td><input id="c" size="2" type="text" value="0">
+			<td><input id="atop" size="2" type="text" value="0">
+			<td><input id="btop" size="2" type="text" value="0">
+			<td><input id="ctop" size="2" type="text" value="0">
 		<tr></tr>
 		<tr>
-			<td><input id="d" size="2" type="text" value="0">
-			<td><input id="e" size="2" type="text" value="">
-			<td><input id="f" size="2" type="text" value="0">
+			<td><input id="dtop" size="2" type="text" value="0">
+			<td><input id="" size="2" type="text" value="">
+			<td><input id="etop" size="2" type="text" value="0">
 		<tr></tr>
 		<tr>
-			<td><input id="g" size="2" type="text" value="0">
-			<td><input id="h" size="2" type="text" value="0">
-			<td><input id="i" size="2" type="text" value="0">
+			<td><input id="ftop" size="2" type="text" value="0">
+			<td><input id="gtop" size="2" type="text" value="0">
+			<td><input id="htop" size="2" type="text" value="0">
 		<tr></tr>
 	</table>
 
@@ -139,8 +139,7 @@
   <rect id="leftytop" onclick="leftytop();" x="15" y="360" width="150"
 			height="285" fill="yellow"></rect>
   
-  <rect id="topredballs" onclick="incrementballstop(); addpitchestop();"
-			x="190" y="60" width="586" height="900" fill="red"></rect>
+  <rect id="topredballs" x="190" y="60" width="586" height="900" fill="red"></rect>
 			
   <rect id="topgreenstrikes"
 			onclick="incrementstrikestop(); addpitchestop();" x="390" y="360"
@@ -166,29 +165,54 @@
 			
 			
 			
-			<rect id="at" onclick="incrementballstop();" x="190" y="60"
+			<rect id="at" onclick="incrementballstop(); addpitchestop();" x="190" y="60"
 			width="200" height="300" fill="transparent" stroke="black"
 			stroke-width="1"></rect>	
-			<rect id="bt" onclick="incrementballstop();" x="390" y="60"
+			<rect id="bt" onclick="incrementballstop(); addpitchestop();" x="390" y="60"
 			width="210" height="300" fill="transparent" stroke="black"
 			stroke-width="1"></rect>
-			<rect id="ct" onclick="incrementballstop();" x="600" y="60"
+			<rect id="ct" onclick="incrementballstop(); addpitchestop();" x="600" y="60"
 			width="176" height="300" fill="transparent" stroke="black"
 			stroke-width="1"></rect>
-			<rect id="dt" onclick="incrementballstop();" x="190" y="360"
+			<rect id="dt" onclick="incrementballstop(); addpitchestop();" x="190" y="360"
 			width="200" height="285" fill="transparent" stroke="black"
 			stroke-width="1"></rect>			
-			<rect id="et" onclick="incrementballstop();" x="600" y="360"
+			<rect id="et" onclick="incrementballstop(); addpitchestop();" x="600" y="360"
 			width="176" height="285" fill="transparent" stroke="black"
 			stroke-width="1"></rect>		
-			<rect id="ft" onclick="incrementballstop();" x="190" y="645"
+			<rect id="ft" onclick="incrementballstop(); addpitchestop();" x="190" y="645"
 			width="200" height="315" fill="transparent" stroke="black"
 			stroke-width="1"></rect>
-			<rect id="gt" onclick="incrementballstop();" x="390" y="645"
+			<rect id="gt" onclick="incrementballstop(); addpitchestop();" x="390" y="645"
 			width="210" height="315" fill="transparent" stroke="black"
 			stroke-width="1"></rect>
-			<rect id="ht" onclick="incrementballstop();" x="600" y="645"
+			<rect id="ht" onclick="incrementballstop(); addpitchestop();" x="600" y="645"
 			width="176" height="315" fill="transparent" stroke="black"
+			stroke-width="1"></rect>	
+					
+			<rect id="ab" onclick="incrementballsbot(); addpitchesbot();" x="190" y="1190"
+			width="200" height="310" fill="transparent" stroke="black"
+			stroke-width="1"></rect>	
+			<rect id="bb" onclick="incrementballsbot(); addpitchesbot();" x="390" y="1190"
+			width="210" height="310" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
+			<rect id="cb" onclick="incrementballsbot(); addpitchesbot();" x="600" y="1190"
+			width="176" height="310" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
+			<rect id="db" onclick="incrementballsbot(); addpitchesbot();" x="190" y="1500"
+			width="200" height="285" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
+			<rect id="eb" onclick="incrementballsbot(); addpitchesbot();" x="600" y="1500"
+			width="176" height="285" fill="transparent" stroke="black"
+			stroke-width="1"></rect>	
+			<rect id="fb" onclick="incrementballsbot(); addpitchesbot();" x="190" y="1785"
+			width="200" height="305" fill="transparent" stroke="black"
+			stroke-width="1"></rect>		
+			<rect id="gb" onclick="incrementballsbot(); addpitchesbot();" x="390" y="1785"
+			width="210" height="305" fill="transparent" stroke="black"
+			stroke-width="1"></rect>		
+			<rect id="hb" onclick="incrementballsbot(); addpitchesbot();" x="600" y="1785"
+			width="176" height="305" fill="transparent" stroke="black"
 			stroke-width="1"></rect>
  </g>
 </svg>
