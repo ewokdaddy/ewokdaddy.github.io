@@ -10,6 +10,7 @@
 
 #sv_window {
 	/* background-color: lightblue; */
+	
 }
 
 #top1, #top2, #top3, #top4, #top5, #top6, #top7, #top8, #top9 {
@@ -48,6 +49,10 @@
 	font-size: 40px;
 }
 
+#table1, #table2 {
+	font-size: 10px;
+	background-color: lightgreen;
+}
 </style>
 <script>
 	//function readMouseMove(e) {
@@ -71,15 +76,24 @@
 	<input id="ballstop" size="3" type="text" id="ballstop" value="0">
 	<input id="strikestop" size="3" type="text" id='strikestop' value="0">
 	<input id="totaltop" size="3" type="text" id="totaltop" value="0">
-	<table>
-	<tr> <td>1<td>2<td>3
-	<tr></tr>
-	<tr> <td>4<td>5<td>6
-	<tr></tr>
-	<tr> <td>7<td>8<td>9
-	<tr></tr>
+	<table id="table1">
+		<tr>
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+		<tr></tr>
+		<tr>
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+		<tr></tr>
+		<tr>
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+		<tr></tr>
 	</table>
-	
+
 	<br>
 
 	<input size="3" type="text" id="top1" placeholder="1T"
@@ -152,23 +166,31 @@
 			
 			
 			
-			<rect id="at" onclick="incrementballstop();" 
-			x="190" y="60" width="200" height="300" fill="transparent" stroke="black" stroke-width="1" ></rect>
+			<rect id="at" onclick="incrementballstop();" x="190" y="60"
+			width="200" height="300" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
 			
-			<rect id="bt" onclick="incrementballstop();"
-			x="390" y="60" width="210" height="300" fill="transparent" stroke="black" stroke-width="1" ></rect>
-			<rect id="ct" onclick="incrementballstop();" 
-			x="600" y="60" width="176" height="300" fill="transparent" stroke="black" stroke-width="1" ></rect>
-			<rect id="dt" onclick="incrementballstop();" 
-			x="190" y="360" width="200" height="285" fill="transparent" stroke="black" stroke-width="1" ></rect>			
-			<rect id="et" onclick="incrementballstop();" 
-			x="600" y="360" width="176" height="285" fill="transparent" stroke="black" stroke-width="1" ></rect>		
-			<rect id="ft" onclick="incrementballstop();" 
-			x="190" y="645" width="200" height="315" fill="transparent" stroke="black" stroke-width="1" ></rect>
-			<rect id="gt" onclick="incrementballstop();" 
-			x="390" y="645" width="210" height="315" fill="transparent" stroke="black" stroke-width="1" ></rect>
-			<rect id="ht" onclick="incrementballstop();" 
-			x="600" y="645" width="176" height="315" fill="transparent" stroke="black" stroke-width="1" ></rect>
+			<rect id="bt" onclick="incrementballstop();" x="390" y="60"
+			width="210" height="300" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
+			<rect id="ct" onclick="incrementballstop();" x="600" y="60"
+			width="176" height="300" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
+			<rect id="dt" onclick="incrementballstop();" x="190" y="360"
+			width="200" height="285" fill="transparent" stroke="black"
+			stroke-width="1"></rect>			
+			<rect id="et" onclick="incrementballstop();" x="600" y="360"
+			width="176" height="285" fill="transparent" stroke="black"
+			stroke-width="1"></rect>		
+			<rect id="ft" onclick="incrementballstop();" x="190" y="645"
+			width="200" height="315" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
+			<rect id="gt" onclick="incrementballstop();" x="390" y="645"
+			width="210" height="315" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
+			<rect id="ht" onclick="incrementballstop();" x="600" y="645"
+			width="176" height="315" fill="transparent" stroke="black"
+			stroke-width="1"></rect>
  </g>
 </svg>
 
@@ -178,6 +200,23 @@
 	<input size="3" type="text" id="ballsbot" value="0">
 	<input size="3" type="text" id='strikesbot' value="0">
 	<input size="3" type="text" id="totalbot" value="0">
+	<table id="table2">
+		<tr>
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+		<tr></tr>
+		<tr>
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+		<tr></tr>
+		<tr>
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+			<td><input size="2" type="text" value="0">
+		<tr></tr>
+	</table>
 	<br>
 	<input size="3" type="text" id="bot1" placeholder="1B"
 		onclick="pitchesBot1();" readonly value="">
