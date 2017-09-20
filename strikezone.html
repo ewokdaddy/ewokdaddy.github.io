@@ -138,6 +138,9 @@
   
   <rect id="leftytop" onclick="leftytop();" x="15" y="360" width="150"
 			height="285" fill="yellow"></rect>
+			<circle cx="90" cy="300" r="60" stroke="green" stroke-width="3" fill="transparent"></circle> 
+			<path d=" M70 645 L 70 800" stroke-width="3" stroke="green" fill="transparent"></path>
+			<path d=" M100 645 L 100 800" stroke-width="3" stroke="green" fill="transparent"></path>
   
   <rect id="topredballs" x="190" y="60" width="586" height="900" fill="red"></rect>
 			
@@ -168,7 +171,7 @@
 			<rect id="at" onclick="incrementballstop(); addpitchestop();" x="190" y="60"
 			width="200" height="300" fill="transparent" stroke="black"
 			stroke-width="1"></rect>	
-			<rect id="bt" onclick="incrementballstop(); addpitchestop();" x="390" y="60"
+			<rect id="bt" onclick=" incrementballstop(); addpitchestop();" x="390" y="60"
 			width="210" height="300" fill="transparent" stroke="black"
 			stroke-width="1"></rect>
 			<rect id="ct" onclick="incrementballstop(); addpitchestop();" x="600" y="60"
@@ -277,7 +280,23 @@
 	<script>
 		var delay = 500;
 		var ballsA = 10;
+		
+		
+		
+		 function incrementballstop() {
+			var pitch = parseInt(document.getElementById('ballstop').value);
+			pitch++;
+			document.getElementById('ballstop').value = pitch;
 
+			document.getElementById("actiont").innerHTML = "BALL BALL BALL BALL";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("ballstop", document
+					.getElementById('ballstop').value);
+
+		} 
+	
 		function pitchesTop1() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
 			document.getElementById('top1').value = pitchestop;
@@ -548,19 +567,7 @@
 			localStorage.setItem("totalbot", document
 					.getElementById('totalbot').value);
 		}
-		function incrementballstop() {
-			var pitch = parseInt(document.getElementById('ballstop').value);
-			pitch++;
-			document.getElementById('ballstop').value = pitch;
-
-			document.getElementById("actiont").innerHTML = "BALL BALL BALL BALL";
-			setTimeout(function() {
-				document.getElementById("actiont").innerHTML = " ";
-			}, delay);
-			localStorage.setItem("ballstop", document
-					.getElementById('ballstop').value);
-
-		}
+		
 		function incrementstrikestop() {
 			var pitch = parseInt(document.getElementById('strikestop').value);
 			pitch++;
