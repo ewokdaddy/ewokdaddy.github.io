@@ -6,7 +6,7 @@
 <title>STRIKE ZONE</title>
 <style type="text/css">
 #body {
-	background-color: lightgreen;
+	background-color: lightgreen; 
 }
 
 #sv_window {
@@ -84,59 +84,12 @@
 	<br>
 
 	<br>
-	<button onclick="zero4newpitchertop();" id="newpitcherbuttontop">NEW
-		PITCHER</button>
+	<button onclick="strikeouts();" id="newpitcherbuttontop">STRIKEOUTS
+		</button>
 	&nbsp;&nbsp;
 	
 	<br>
 
-	<svg id="sv_window" width="1000" height="2100"
-		<!-- <svg id="sv_window" width="700" height="2100" -->
-		xmlns="http://www.w3.org/2000/svg"
-		xmlns:svg="http://www.w3.org/2000/svg">
- <g>
-  <title>BALLS AND STRIKES</title>
-
-  <rect id="topredballs" x="190" y="60" width="586" height="900" fill="red"></rect>
-			
-  <rect id="topgreenstrikes"
-			onclick="incrementstrikestop(); addpitchestop();" x="390" y="360"
-			width="210" height="285" fill="green"></rect>
-			
-  <!-- <rect id="rightytop" onclick="rightytop();" x="815" y="360"
-			width="150" height="285" fill="yellow"></rect>
-			
-		 	<rect id="at" onclick="incrementballstop(); addpitchestop();" x="190" y="60"
-			width="200" height="300" fill="transparent" stroke="black"
-			stroke-width="1"></rect>	
-			<rect id="bt" onclick=" incrementballstop(); addpitchestop();" x="390" y="60"
-			width="210" height="300" fill="transparent" stroke="black"
-			stroke-width="1"></rect>
-			<rect id="ct" onclick="incrementballstop(); addpitchestop();" x="600" y="60"
-			width="176" height="300" fill="transparent" stroke="black"
-			stroke-width="1"></rect>
-			<rect id="dt" onclick="incrementballstop(); addpitchestop();" x="190" y="360"
-			width="200" height="285" fill="transparent" stroke="black"
-			stroke-width="1"></rect>			
-			<rect id="et" onclick="incrementballstop(); addpitchestop();" x="600" y="360"
-			width="176" height="285" fill="transparent" stroke="black"
-			stroke-width="1"></rect>		
-			<rect id="ft" onclick="incrementballstop(); addpitchestop();" x="190" y="645"
-			width="200" height="315" fill="transparent" stroke="black"
-			stroke-width="1"></rect>
-			<rect id="gt" onclick="incrementballstop(); addpitchestop();" x="390" y="645"
-			width="210" height="315" fill="transparent" stroke="black"
-			stroke-width="1"></rect>
-			<rect id="ht" onclick="incrementballstop(); addpitchestop();" x="600" y="645"
-			width="176" height="315" fill="transparent" stroke="black"
-			stroke-width="1"></rect>
-			
-
- </g>
-</svg>
-
-
-	<br>
 	
 	<script>
 		var delay = 500;
@@ -283,8 +236,8 @@
 					.getElementById('strikestop').value);
 		}
 		
-		
-		function zero4newpitchertop() {
+		<!-- here is the new function strikeouts, formerly zero4newpitchertop -->
+		function strikeouts() {
 			var pitch = 0;
 			document.getElementById('ballstop').value = pitch;
 			document.getElementById('strikestop').value = pitch;
