@@ -45,7 +45,7 @@
 	
 	<b id="actiont"></b>
 	
-	<input id="totaltop" size="3" type="text" id="totaltop" value="0">
+	<input id="totaltop" size="3" type="text" id="totaltop" value="1">
 
 	<br>
 
@@ -99,24 +99,10 @@
 		</button>
 	
 	<script>
-		var delay = 500;
-		var ballsA = 10;
 		
 		
 		
-		 function incrementballstop() {
-			var pitch = parseInt(document.getElementById('ballstop').value);
-			pitch++;
-			document.getElementById('ballstop').value = pitch;
-
-			document.getElementById("actiont").innerHTML = "BALL BALL BALL BALL";
-			setTimeout(function() {
-				document.getElementById("actiont").innerHTML = " ";
-			}, delay);
-			localStorage.setItem("ballstop", document
-					.getElementById('ballstop').value);
-
-		} 
+		
 	
 		function pitchesTop1() {
 			var pitchestop = parseInt(document.getElementById('totaltop').value);
@@ -124,100 +110,7 @@
 			document.getElementById('top1').style.backgroundColor = "aqua";
 			localStorage.setItem("top1", document.getElementById('top1').value);
 		}
-		function pitchesTop2() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			document.getElementById('top2').value = pitchestop - pitches1st;
-			document.getElementById('top2').style.backgroundColor = "aqua";
-			localStorage.setItem("top2", document.getElementById('top2').value);
-		}
-		function pitchesTop3() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			var pitches2nd = parseInt(document.getElementById('top2').value);
-			document.getElementById('top3').value = pitchestop - pitches1st
-					- pitches2nd;
-			document.getElementById('top3').style.backgroundColor = "aqua";
-			localStorage.setItem("top3", document.getElementById('top3').value);
-		}
-		function pitchesTop4() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			var pitches2nd = parseInt(document.getElementById('top2').value);
-			var pitches3rd = parseInt(document.getElementById('top3').value);
-			document.getElementById('top4').value = pitchestop - pitches1st
-					- pitches2nd - pitches3rd;
-			document.getElementById('top4').style.backgroundColor = "aqua";
-			localStorage.setItem("top4", document.getElementById('top4').value);
-		}
-		function pitchesTop5() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			var pitches2nd = parseInt(document.getElementById('top2').value);
-			var pitches3rd = parseInt(document.getElementById('top3').value);
-			var pitches4th = parseInt(document.getElementById('top4').value);
-			document.getElementById('top5').value = pitchestop - pitches1st
-					- pitches2nd - pitches3rd - pitches4th;
-			document.getElementById('top5').style.backgroundColor = "aqua";
-			localStorage.setItem("top5", document.getElementById('top5').value);
-		}
-		function pitchesTop6() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			var pitches2nd = parseInt(document.getElementById('top2').value);
-			var pitches3rd = parseInt(document.getElementById('top3').value);
-			var pitches4th = parseInt(document.getElementById('top4').value);
-			var pitches5th = parseInt(document.getElementById('top5').value);
-			document.getElementById('top6').value = pitchestop - pitches1st
-					- pitches2nd - pitches3rd - pitches4th - pitches5th;
-			document.getElementById('top6').style.backgroundColor = "aqua";
-			localStorage.setItem("top6", document.getElementById('top6').value);
-		}
-		function pitchesTop7() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			var pitches2nd = parseInt(document.getElementById('top2').value);
-			var pitches3rd = parseInt(document.getElementById('top3').value);
-			var pitches4th = parseInt(document.getElementById('top4').value);
-			var pitches5th = parseInt(document.getElementById('top5').value);
-			var pitches6th = parseInt(document.getElementById('top6').value);
-			document.getElementById('top7').value = pitchestop - pitches1st
-					- pitches2nd - pitches3rd - pitches4th - pitches5th
-					- pitches6th;
-			document.getElementById('top7').style.backgroundColor = "aqua";
-			localStorage.setItem("top7", document.getElementById('top7').value);
-		}
-		function pitchesTop8() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			var pitches2nd = parseInt(document.getElementById('top2').value);
-			var pitches3rd = parseInt(document.getElementById('top3').value);
-			var pitches4th = parseInt(document.getElementById('top4').value);
-			var pitches5th = parseInt(document.getElementById('top5').value);
-			var pitches6th = parseInt(document.getElementById('top6').value);
-			var pitches7th = parseInt(document.getElementById('top7').value);
-			document.getElementById('top8').value = pitchestop - pitches1st
-					- pitches2nd - pitches3rd - pitches4th - pitches5th
-					- pitches6th - pitches7th;
-			document.getElementById('top8').style.backgroundColor = "aqua";
-			localStorage.setItem("top8", document.getElementById('top8').value);
-		}
-		function pitchesTop9() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			var pitches1st = parseInt(document.getElementById('top1').value);
-			var pitches2nd = parseInt(document.getElementById('top2').value);
-			var pitches3rd = parseInt(document.getElementById('top3').value);
-			var pitches4th = parseInt(document.getElementById('top4').value);
-			var pitches5th = parseInt(document.getElementById('top5').value);
-			var pitches6th = parseInt(document.getElementById('top6').value);
-			var pitches7th = parseInt(document.getElementById('top7').value);
-			var pitches8th = parseInt(document.getElementById('top8').value);
-			document.getElementById('top9').value = pitchestop - pitches1st
-					- pitches2nd - pitches3rd - pitches4th - pitches5th
-					- pitches6th - pitches7th - pitches8th;
-			document.getElementById('top9').style.backgroundColor = "aqua";
-			localStorage.setItem("top9", document.getElementById('top9').value);
-		}
+		
 		
 
 		function addpitchestop() {
@@ -258,9 +151,7 @@
 		}
 		
 	</script>
-	<br>
-	<br>
-	<br>
+	
 	
 </body>
 </html>
