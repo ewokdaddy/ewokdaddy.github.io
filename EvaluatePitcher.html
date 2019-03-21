@@ -28,14 +28,7 @@
 	background-color: lightred;
 }
 
-#actiont {
-	font-size: 10px;
-}
 
-#a,#b,#c,#d,#e,#f,#g,#h,#i,#j,#k,#l,#m,#n,#o,#p,#q,#r{
-	font-size: 20px;
-	background-color: lightgreen;
-}
 </style>
 <script>
 	
@@ -43,12 +36,9 @@
 </head>
 <body id="body">
 	
-	<b id="actiont"></b>
-	
 	<input id="totaltop" size="3" type="text" id="totaltop" value="1">
 
 	<br>
-
 	<br>
 	<button onclick="strikeouts();" id="fillbox">STRIKEOUTS
 		</button>
@@ -138,6 +128,19 @@
 		
 		<!-- here is the new function strikeouts, formerly zero4newpitchertop -->
 		function strikeouts() {
+			var pitch = 0;
+			document.getElementById('ballstop').value = pitch;
+			document.getElementById('strikestop').value = pitch;
+			document.getElementById('totaltop').value = pitch;
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+			localStorage.setItem("ballstop", document
+					.getElementById('ballstop').value);
+			localStorage.setItem("totaltop", document
+					.getElementById('totaltop').value);
+		}
+		
+		function reset() {
 			var pitch = 0;
 			document.getElementById('ballstop').value = pitch;
 			document.getElementById('strikestop').value = pitch;
