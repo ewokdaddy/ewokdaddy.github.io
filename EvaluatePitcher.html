@@ -89,23 +89,7 @@
 		</button>
 	
 	<script>
-		
-		
-/*
-		function addpitchestop() {
-			var strikes = parseInt(document.getElementById('strikestop').value);
-			var balls = parseInt(document.getElementById('ballstop').value);
-			var pitches = strikes + balls;
-			document.getElementById('total').value = pitches;
-			localStorage.setItem("total", document
-					.getElementById('total').value);
-		}
-		
-*/		
-		
-
-	
-	
+			
 	/* read what is in there, add to the function, put the answer back */
 	
 	
@@ -114,33 +98,13 @@
 		function strikeouts() {
 			var strikeoutvalue = 2;
 			var totalvalue = parseInt(document.getElementById('total').value);
-			
-			document.getElementById('total').value = totalvalue + strikeoutvalue;
-		
-			
-			
-			
-			
-			
-			
-			
-			
-		/*	localStorage.setItem("total", document
-					.getElementById('total').value); 
-					*/
-			
+			document.getElementById('total').value = totalvalue + strikeoutvalue;		
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		function gndflyouts() {
+			var flyoutvalue = 1;
+			var totalvalue = parseInt(document.getElementById('total').value);
+			document.getElementById('total').value = totalvalue + flyoutvalue;	
 		}
 		
 		function rispjam() {
