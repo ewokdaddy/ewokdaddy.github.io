@@ -12,7 +12,7 @@
 
 
 
-#totaltop {
+#total {
 	font-size: 60px;
 	background-color: yellow;
 }
@@ -36,7 +36,7 @@
 </head>
 <body id="body">
 	
-	<input id="totaltop" size="3" type="text" id="totaltop" value="1">
+	<input id="total" size="3" type="text" id="total" value="2">
 
 	<br>
 	<br>
@@ -94,12 +94,7 @@
 		
 		
 	
-		function pitchesTop1() {
-			var pitchestop = parseInt(document.getElementById('totaltop').value);
-			document.getElementById('top1').value = pitchestop;
-			document.getElementById('top1').style.backgroundColor = "aqua";
-			localStorage.setItem("top1", document.getElementById('top1').value);
-		}
+		
 		
 		
 
@@ -107,13 +102,77 @@
 			var strikes = parseInt(document.getElementById('strikestop').value);
 			var balls = parseInt(document.getElementById('ballstop').value);
 			var pitches = strikes + balls;
-			document.getElementById('totaltop').value = pitches;
-			localStorage.setItem("totaltop", document
-					.getElementById('totaltop').value);
+			document.getElementById('total').value = pitches;
+			localStorage.setItem("total", document
+					.getElementById('total').value);
 		}
 		
 		
-		function incrementstrikestop() {
+		
+		
+		<!-- here is the new function strikeouts, formerly zero4newpitchertop -->
+			
+		function strikeouts() {
+			var pitch = 0;
+			document.getElementById('ballstop').value = pitch;
+			document.getElementById('strikestop').value = pitch;
+			document.getElementById('total').value = pitch;
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+			localStorage.setItem("ballstop", document
+					.getElementById('ballstop').value);
+			localStorage.setItem("total", document
+					.getElementById('total').value);
+		}
+		function gndflyouts() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
+			document.getElementById('strikestop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+		}
+		function rispjam() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
+			document.getElementById('strikestop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+		}
+		function hit() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
+			document.getElementById('strikestop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+		}
+		function runscored() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
+			document.getElementById('strikestop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+		}
+		function walk() {
 			var pitch = parseInt(document.getElementById('strikestop').value);
 			pitch++;
 			document.getElementById('strikestop').value = pitch;
@@ -126,31 +185,57 @@
 					.getElementById('strikestop').value);
 		}
 		
-		<!-- here is the new function strikeouts, formerly zero4newpitchertop -->
-		function strikeouts() {
-			var pitch = 0;
-			document.getElementById('ballstop').value = pitch;
+		function errorpitcher() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
 			document.getElementById('strikestop').value = pitch;
-			document.getElementById('totaltop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
 			localStorage.setItem("strikestop", document
 					.getElementById('strikestop').value);
-			localStorage.setItem("ballstop", document
-					.getElementById('ballstop').value);
-			localStorage.setItem("totaltop", document
-					.getElementById('totaltop').value);
 		}
+		
+		function errorcatcher() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
+			document.getElementById('strikestop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+		}
+		
+		function errorfielder() {
+			var pitch = parseInt(document.getElementById('strikestop').value);
+			pitch++;
+			document.getElementById('strikestop').value = pitch;
+
+			document.getElementById("actiont").innerHTML = "STRIKE STRIKE STRIKE";
+			setTimeout(function() {
+				document.getElementById("actiont").innerHTML = " ";
+			}, delay);
+			localStorage.setItem("strikestop", document
+					.getElementById('strikestop').value);
+		}
+			
 		
 		function reset() {
 			var pitch = 0;
 			document.getElementById('ballstop').value = pitch;
 			document.getElementById('strikestop').value = pitch;
-			document.getElementById('totaltop').value = pitch;
+			document.getElementById('total').value = pitch;
 			localStorage.setItem("strikestop", document
 					.getElementById('strikestop').value);
 			localStorage.setItem("ballstop", document
 					.getElementById('ballstop').value);
-			localStorage.setItem("totaltop", document
-					.getElementById('totaltop').value);
+			localStorage.setItem("total", document
+					.getElementById('total').value);
 		}
 		
 	</script>
