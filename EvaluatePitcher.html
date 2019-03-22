@@ -113,16 +113,13 @@
 		<!-- here is the new function strikeouts, formerly zero4newpitchertop -->
 			
 		function strikeouts() {
-			var pitch = 0;
-			document.getElementById('ballstop').value = pitch;
-			document.getElementById('strikestop').value = pitch;
-			document.getElementById('total').value = pitch;
-			localStorage.setItem("strikestop", document
-					.getElementById('strikestop').value);
-			localStorage.setItem("ballstop", document
-					.getElementById('ballstop').value);
+			var strikeoutvalue = 2;
+			document.getElementById('strikeout').value = strikeoutvalue;
+			
+			document.getElementById('total').value = strikeout;
 			localStorage.setItem("total", document
-					.getElementById('total').value);
+					.getElementById('strikestop').value);
+			
 		}
 		function gndflyouts() {
 			var pitch = parseInt(document.getElementById('strikestop').value);
