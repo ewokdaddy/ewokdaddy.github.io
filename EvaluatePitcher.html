@@ -36,7 +36,7 @@
 </head>
 <body id="body">
 	
-	<input id="total" size="3" type="text" id="total" value="3">
+	<input id="total" size="3" type="text" id="total" value="2">
 
 	<br>
 	<br>
@@ -113,7 +113,8 @@
 			
 		function strikeouts() {
 			var strikeoutvalue = 2;
-			var totalvalue = document.getElementById('total').value;
+			var totalvalue = parseInt(document.getElementById('total').value);
+			
 			document.getElementById('total').value = totalvalue + strikeoutvalue;
 		
 			
